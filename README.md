@@ -11,6 +11,10 @@ _2021.09.01_
 
 은진, 남혁, 희조, 리후
 
+## Project
+
+### Viary
+
 ### 은진
 
 #### Todo Function
@@ -25,7 +29,24 @@ _2021.09.01_
 
 > 1. Display Monthly Schedule
 > 2. Display Todo List
-> 3. Displaly Today's Weather
+> 3. Display Today's Weather
+
+#### Bottom Navbar
+
+> 1. Search
+> 2. Active Button
+> 3. Settings
+
+### 남혁
+
+#### Timeline Function
+
+> 1. TimeLine CRUD
+
+
+#### Top Navbar
+> 1. Page Links
+> 2. Swipe Function
 
 ## Project setup
 
