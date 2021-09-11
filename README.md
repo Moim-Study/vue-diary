@@ -11,6 +11,14 @@ _2021.09.01_
 
 은진, 남혁, 희조, 리후
 
+### 은진
+
+#### Todo Function
+
+> 1. List Delete, Add, Modify
+> 2. Done List
+> 3. Prograss Bar
+
 ## Project setup
 
 ```
