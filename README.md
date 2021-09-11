@@ -19,6 +19,14 @@ _2021.09.01_
 > 2. Done List
 > 3. Prograss Bar
 
+### 리후
+
+#### Main Function
+
+> 1. Display Monthly Schedule
+> 2. Display Todo List
+> 3. Displaly Today's Weather
+
 ## Project setup
 
 ```
