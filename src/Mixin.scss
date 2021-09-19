@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+@mixin object($d, $p, $w, $h){
+    display:$d;
+    position: $p;
+    width: $w;
+    height: $h;
+ }
