@@ -1,5 +1,5 @@
 <template>
-  <div><img alt="Vue logo" src="../assets/logo.png" /></div>
+  <div><img alt="Vue logo" src="../assets/logo.png" />iary</div>
 </template>
 
 <script>
@@ -10,5 +10,5 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  // acolor: #42b983;
+  // color: #42b983;
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div id="nav">
-    <router-link to="./components/Logo.vue">Logo</router-link>
     <router-link to="/">Main</router-link>
     <router-link to="/timeLine">TimeLine</router-link>
   </div>
@@ -8,7 +7,7 @@
 </template>
 
 <style lang="scss">
-@import 'App.scss';
+  @import 'App.scss';
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
