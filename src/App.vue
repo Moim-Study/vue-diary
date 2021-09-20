@@ -48,11 +48,7 @@ export default {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
 #nav {
@@ -69,15 +65,18 @@ export default {
 }
 
 #footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: #eee;
   padding: 24px 3rem;
 }
 
 .footerBtns {
+  @include flex(space-evenly, center, "");
   border-radius: 50px;
   background-color: white;
   color: black;
-  @include flex(space-evenly, center, "");
 
   i {
     @include flex(center, center, "");

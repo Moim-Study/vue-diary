@@ -1,5 +1,5 @@
 <template>
-  <div class="mainTodoWrap">
+  <article class="mainTodoWrap">
     <h2 class="mainTodoTitle">TO-DO</h2>
 
     <ul class="mainTodo">
@@ -19,7 +19,7 @@
         <p class="mainTodoTime">06:58pm</p>
       </li>
     </ul>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -27,19 +27,22 @@ export default {};
 </script>
 
 <style lang="scss">
-.mainTodoWrap {
-  margin: 32px;
-}
+$space: 16px;
 
+.mainTodoWrap {
+  margin-bottom: 24px;
+}
 .mainTodoTitle {
-  margin-bottom: 32px;
+  margin: $space 0;
 }
 
 .mainTodo {
+  padding: 0 $space;
+
   li {
     display: flex;
-    align-items: center;
-    padding-bottom: 24px;
+    margin-bottom: 8px;
+    font-size: 0.8em;
     text-align: left;
     position: relative;
     cursor: default;
@@ -60,9 +63,8 @@ export default {};
 }
 
 .mainTodoCheck {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: 1.5em;
+  height: 1.5em;
   border-radius: 100%;
   border: 1px solid #ccc;
   margin-right: 14px;

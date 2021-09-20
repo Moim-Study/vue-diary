@@ -158,7 +158,7 @@ export default {
 @mixin calendarLayout($property) {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-gap: 15px 30px;
+  grid-gap: 8px;
   padding: $property;
 
   div {
@@ -169,7 +169,7 @@ export default {
   }
 }
 
-$space: 24px;
+$space: 16px;
 
 #calendar {
   overflow: hidden;
@@ -199,8 +199,10 @@ $space: 24px;
 }
 
 .weekdays {
-  @include calendarLayout(0 30px);
+  @include calendarLayout(4px 16px);
+  font-size: 0.9em;
   font-weight: 500;
+  background-color: #eee;
 
   div {
     &:last-child {
@@ -210,13 +212,14 @@ $space: 24px;
 }
 
 .date {
-  @include calendarLayout(20px 30px);
+  @include calendarLayout(16px);
   font-weight: 600;
   cursor: pointer;
   color: lightgray;
 
   .day {
     color: black;
+    padding: 0 6px;
 
     &:nth-child(7n) {
       color: orangered;
@@ -228,7 +231,6 @@ $space: 24px;
       border-radius: 4px;
     }
   }
-
   .active {
     border: 1px dashed orangered;
     color: orangered;
