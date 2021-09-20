@@ -6,17 +6,17 @@
       <li>
         <label class="mainTodoCheck"></label>
         Meeting with Client
-        <p class="mainTodoTime">06:58PM</p>
+        <p class="mainTodoTime">06:58pm</p>
       </li>
       <li>
         <label class="mainTodoCheck"></label>
         Take my pet to veteran
-        <p class="mainTodoTime">06:58PM</p>
+        <p class="mainTodoTime">06:58pm</p>
       </li>
       <li>
         <label class="mainTodoCheck"></label>
         Call CEO for meeting
-        <p class="mainTodoTime">06:58PM</p>
+        <p class="mainTodoTime">06:58pm</p>
       </li>
     </ul>
   </div>
@@ -43,14 +43,6 @@ export default {};
     text-align: left;
     position: relative;
     cursor: default;
-
-    &::after {
-      content: ">";
-      position: absolute;
-      right: 0;
-      font-size: 0.85em;
-      color: #ccc;
-    }
   }
 }
 
@@ -58,7 +50,13 @@ export default {};
   font-size: 0.85em;
   color: #ccc;
   position: absolute;
-  right: 16px;
+  right: 0;
+
+  &::after {
+    content: " >";
+    right: 0;
+    color: #ccc;
+  }
 }
 
 .mainTodoCheck {

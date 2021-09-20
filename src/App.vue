@@ -6,7 +6,7 @@
   <Calendar />
   <MainTodo />
 
-  <div class="footer">
+  <div id="footer">
     <div class="footerBtns">
       <button><i class="fas fa-search"></i></button>
       <button class="footerPlusBtn">
@@ -34,6 +34,18 @@ export default {
 
 <style lang="scss">
 @import "App.scss";
+@mixin object($w, $h, $p) {
+  width: $w;
+  height: $h;
+  position: $p;
+}
+
+@mixin flex($j, $a, $d) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -56,7 +68,7 @@ export default {
   color: #42b983;
 }
 
-.footer {
+#footer {
   background-color: #eee;
   padding: 24px 3rem;
 }
@@ -65,14 +77,10 @@ export default {
   border-radius: 50px;
   background-color: white;
   color: black;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  @include flex(space-evenly, center, "");
 
   i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center, "");
     font-size: 1.5em;
     cursor: pointer;
   }
