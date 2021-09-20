@@ -2,9 +2,9 @@
   <article id="calendar">
     <header class="calendarTop">
       <ul class="currentMonth">
-        <li class="arrowBtn">◀</li>
-        <li>In September 2021</li>
-        <li class="arrowBtn">▶</li>
+        <li class="arrowBtn" @click="prevMonth">◀</li>
+        <li>In {{ month[currentDate.month] }} {{ currentDate.year }}</li>
+        <li class="arrowBtn" @click="nextMonth">▶</li>
       </ul>
     </header>
 
@@ -15,13 +15,26 @@
         </div>
       </div>
       <div class="date">
-        <div class="dayHidden">29</div>
-        <div class="dayHidden">30</div>
-        <div class="dayHidden">31</div>
-        <div class="day" v-for="(n, i) in 31" :key="i">
+        <div
+          class="dayHidden"
+          v-for="(n, i) in firstMonthDay - 1"
+          :key="'prev' + i"
+        >
+          {{ prevMonthDay + 1 - firstMonthDay + n }}
+        </div>
+        <div
+          class="day"
+          :class="{ active: n === currentDate.date }"
+          v-for="(n, i) in currentMonthDays"
+          :key="'day' + i"
+        >
           {{ n }}
         </div>
-        <div class="day" v-for="(n, i) in 8" :key="i">
+        <div
+          class="dayHidden"
+          v-for="(n, i) in 43 - (currentMonthDays + firstMonthDay)"
+          :key="'next' + i"
+        >
           {{ n }}
         </div>
       </div>
@@ -31,12 +44,102 @@
 
 <script>
 export default {
+  name: "Calendar",
   data() {
     return {
-      weekdays: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
+      weekdays: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+      weekdayNames: [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+      ],
+      month: [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ],
+      currentDate: {
+        date: 0,
+        month: 0,
+        year: 0,
+      },
     };
   },
-  methods: {},
+
+  computed: {
+    currentDay() {
+      return new Date(
+        this.currentDate.year,
+        this.currentDate.month,
+        this.currentDate.date
+      ).getDay();
+    },
+    currentMonthDays() {
+      return new Date(
+        this.currentDate.year,
+        this.currentDate.month + 1,
+        0
+      ).getDate();
+    },
+    prevMonthDay() {
+      let year =
+        this.currentDate.month === 0
+          ? this.currentDate.year - 1
+          : this.currentDate.year;
+      let month = this.currentDate.month === 0 ? 11 : this.currentDate.month;
+      return new Date(year, month, 0).getDate();
+    },
+    firstMonthDay() {
+      let firstDay = new Date(
+        this.currentDate.year,
+        this.currentDate.month,
+        1
+      ).getDay();
+      if (firstDay === 0) firstDay = 7;
+      return firstDay;
+    },
+  },
+
+  methods: {
+    getCurrentDate() {
+      let today = new Date();
+      this.currentDate.date = today.getDate();
+      this.currentDate.month = today.getMonth();
+      this.currentDate.year = today.getFullYear();
+    },
+    prevMonth() {
+      if (this.currentDate.month == 0) {
+        this.currentDate.month = 11;
+        this.currentDate.year -= 1;
+      } else {
+        this.currentDate.month -= 1;
+      }
+    },
+    nextMonth() {
+      if (this.currentDate.month == 11) {
+        this.currentDate.month = 0;
+        this.currentDate.year += 1;
+      } else {
+        this.currentDate.month += 1;
+      }
+    },
+  },
+
+  created() {
+    this.getCurrentDate();
+  },
 };
 </script>
 
@@ -46,17 +149,14 @@ export default {
   height: $h;
   position: $p;
 }
-
 @mixin flex($j, $a, $d) {
   display: flex;
   justify-content: $j;
   align-items: $a;
   flex-direction: $d;
 }
-
 @mixin calendarLayout($property) {
   display: grid;
-  /*grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));*/
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 15px 30px;
   padding: $property;
@@ -69,15 +169,16 @@ export default {
   }
 }
 
+$space: 24px;
+
 #calendar {
   overflow: hidden;
   cursor: default;
-  margin-top: 24px;
 }
 
 .calendarTop {
-  @include flex(center, "", "");
-  margin-bottom: 24px;
+  @include flex(center, "", column);
+  margin-bottom: $space;
 }
 
 .arrowBtn {
@@ -85,11 +186,12 @@ export default {
 }
 
 .currentMonth {
-  @include flex(space-between, center, "");
+  @include flex(space-evenly, center, "");
 
   li {
+    width: 100px;
     &:nth-child(2) {
-      padding: 0 48px;
+      width: 300px;
       font-weight: 600;
       font-size: 1.3rem;
     }
@@ -98,31 +200,39 @@ export default {
 
 .weekdays {
   @include calendarLayout(0 30px);
-  font-weight: 600;
+  font-weight: 500;
 
   div {
-    &:first-child {
-      color: orangered;
-    }
     &:last-child {
-      color: royalblue;
+      color: orangered;
     }
   }
 }
 
 .date {
   @include calendarLayout(20px 30px);
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   color: lightgray;
 
   .day {
     color: black;
+
+    &:nth-child(7n) {
+      color: orangered;
+    }
+
     &:hover {
       background-color: orangered;
+      color: white;
       border-radius: 4px;
-      color: #fff;
     }
+  }
+
+  .active {
+    border: 1px dashed orangered;
+    color: orangered;
+    border-radius: 6px;
   }
 }
 </style>
