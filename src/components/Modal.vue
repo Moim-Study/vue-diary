@@ -42,14 +42,13 @@ export default {
 }
 
 $pointColor: orangered;
-$circleSize: 50px;
+$circleSize: 3.5em;
 
 .subBtns {
   @include flex(center, "", "");
 
   ul {
     @include flex(space-between, "", "");
-    width: 45%;
     position: absolute;
     margin-bottom: 16px;
     bottom: 110px;
@@ -62,7 +61,12 @@ $circleSize: 50px;
   border-radius: 100%;
   color: white;
   line-height: $circleSize;
+  margin-right: 8px;
   z-index: 2;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .activeBtn {

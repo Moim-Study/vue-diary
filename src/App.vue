@@ -1,14 +1,8 @@
 <template>
   <Modal :step="step" />
 
-  <div id="nav">
-    <router-link to="/">Main</router-link>
-    <router-link to="/timeLine">TimeLine</router-link>
-  </div>
-
-  <Calendar />
-  <MainTodo />
-
+  <div id="nav">menu</div>
+  <router-view></router-view>
   <footer id="footer">
     <div class="footerBtns">
       <button @click="step = 1"><i class="fas fa-search"></i></button>
@@ -21,8 +15,6 @@
 </template>
 
 <script>
-import Calendar from "./components/Calendar";
-import MainTodo from "./components/MainTodo";
 import Modal from "./components/Modal";
 
 export default {
@@ -33,8 +25,6 @@ export default {
     };
   },
   components: {
-    Calendar,
-    MainTodo,
     Modal,
   },
 };
@@ -60,7 +50,8 @@ export default {
 }
 
 #nav {
-  padding: 30px;
+  padding: 16px;
+  border: 1px solid red;
 }
 
 #nav a {
@@ -90,7 +81,6 @@ export default {
   i {
     @include flex(center, center, "");
     font-size: 1.5em;
-    cursor: pointer;
   }
 }
 

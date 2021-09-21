@@ -174,16 +174,11 @@ $space: 16px;
 
 #calendar {
   overflow: hidden;
-  cursor: default;
 }
 
 .calendarTop {
   @include flex(center, "", column);
-  margin-bottom: $space;
-}
-
-.arrowBtn {
-  cursor: pointer;
+  margin: $space 0;
 }
 
 .currentMonth {
@@ -198,7 +193,7 @@ $space: 16px;
     &:nth-child(2) {
       width: 60%;
       font-weight: 600;
-      font-size: 1.3rem;
+      font-size: 1.2em;
     }
     &:nth-child(3) {
       text-align: left;
@@ -222,7 +217,6 @@ $space: 16px;
 .date {
   @include calendarLayout(16px);
   font-weight: 600;
-  cursor: pointer;
   color: lightgray;
 
   .day {
