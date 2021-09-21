@@ -169,6 +169,7 @@ export default {
   }
 }
 
+$pointColor: orangered;
 $space: 16px;
 
 #calendar {
@@ -206,7 +207,7 @@ $space: 16px;
 
   div {
     &:last-child {
-      color: orangered;
+      color: $pointColor;
     }
   }
 }
@@ -222,18 +223,18 @@ $space: 16px;
     padding: 0 6px;
 
     &:nth-child(7n) {
-      color: orangered;
+      color: $pointColor;
     }
 
     &:hover {
-      background-color: orangered;
+      background-color: $pointColor;
       color: white;
       border-radius: 4px;
     }
   }
   .active {
-    border: 1px dashed orangered;
-    color: orangered;
+    border: 1px dashed $pointColor;
+    color: $pointColor;
     border-radius: 6px;
   }
 }

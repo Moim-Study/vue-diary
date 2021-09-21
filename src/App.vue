@@ -1,33 +1,41 @@
 <template>
+  <Modal :step="step" />
+
   <div id="nav">
     <router-link to="/">Main</router-link>
     <router-link to="/timeLine">TimeLine</router-link>
   </div>
+
   <Calendar />
   <MainTodo />
 
-  <div id="footer">
+  <footer id="footer">
     <div class="footerBtns">
-      <button><i class="fas fa-search"></i></button>
-      <button class="footerPlusBtn">
+      <button @click="step = 1"><i class="fas fa-search"></i></button>
+      <button class="footerPlusBtn" @click="step = 2">
         <img src="./assets/plus_btn.svg" alt="plus_btn" />
       </button>
-      <button><i class="fas fa-cog"></i></button>
+      <router-link to="/setting"><i class="fas fa-cog"></i></router-link>
     </div>
-  </div>
-
-  <router-view />
+  </footer>
 </template>
 
 <script>
 import Calendar from "./components/Calendar";
 import MainTodo from "./components/MainTodo";
+import Modal from "./components/Modal";
 
 export default {
   name: "App",
+  data() {
+    return {
+      step: 0,
+    };
+  },
   components: {
     Calendar,
     MainTodo,
+    Modal,
   },
 };
 </script>
@@ -70,6 +78,7 @@ export default {
   width: 100%;
   background-color: #eee;
   padding: 24px 3rem;
+  z-index: 2;
 }
 
 .footerBtns {
