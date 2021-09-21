@@ -187,14 +187,21 @@ $space: 16px;
 }
 
 .currentMonth {
-  @include flex(space-evenly, center, "");
+  @include flex("", center, "");
 
   li {
-    width: 100px;
+    width: 20%;
+
+    &:nth-child(1) {
+      text-align: right;
+    }
     &:nth-child(2) {
-      width: 300px;
+      width: 60%;
       font-weight: 600;
       font-size: 1.3rem;
+    }
+    &:nth-child(3) {
+      text-align: left;
     }
   }
 }
