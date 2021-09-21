@@ -2,7 +2,9 @@
   <Modal :step="step" />
 
   <div id="nav">menu</div>
+
   <router-view></router-view>
+
   <footer id="footer">
     <div class="footerBtns">
       <button @click="step = 1"><i class="fas fa-search"></i></button>
@@ -65,7 +67,8 @@ export default {
 }
 
 #footer {
-  position: absolute;
+  /* iphone 6/7/8에서 bottom에 붙지 않음? */
+  position: sticky;
   bottom: 0;
   width: 100%;
   background-color: #eee;
