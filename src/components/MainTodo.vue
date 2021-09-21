@@ -73,7 +73,6 @@ $space: 16px;
     font-size: 0.9em;
     text-align: left;
     position: relative;
-    cursor: default;
   }
 }
 

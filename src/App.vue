@@ -32,6 +32,7 @@ export default {
 
 <style lang="scss">
 @import "App.scss";
+
 @mixin object($w, $h, $p) {
   width: $w;
   height: $h;
