@@ -1,12 +1,10 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Main</router-link>
-    <router-link to="/timeLine">TimeLine</router-link>
-    <router-link to="/todo">Todo</router-link>
-  </div>
+  <div id="nav"></div>
   <router-view />
 </template>
-
+<script>
+  export default {};
+</script>
 <style lang="scss">
   @import 'App.scss';
   #app {
