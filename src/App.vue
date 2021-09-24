@@ -1,9 +1,17 @@
 <template>
-  <div id="nav"></div>
+  <div id="nav" v-if="url[3] !== 'loading'">
+    <router-link to="/todo">Todo</router-link>
+  </div>
   <router-view />
 </template>
 <script>
-  export default {};
+  export default {
+    data() {
+      return {
+        url: document.location.href.split('/'),
+      };
+    },
+  };
 </script>
 <style lang="scss">
   @import 'App.scss';
