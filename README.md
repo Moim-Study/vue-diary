@@ -21,6 +21,10 @@ _2021.09.01_
 > > 2. Done List
 > > 3. Prograss Bar
 >
+> #### Loading Function
+>
+> > 1. Loading
+>
 > ### 리후
 >
 > #### Main Function
@@ -42,6 +46,7 @@ _2021.09.01_
 > > 1. TimeLine CRUD
 >
 > #### Top Navbar
+>
 > > 1. Page Links
 > > 2. Swipe Function
 

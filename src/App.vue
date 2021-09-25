@@ -1,6 +1,6 @@
 <template>
   <Modal :step="step" />
-
+  <!-- <div id="nav" v-if="url[3] !== 'loading'"> -->
   <div id="nav">menu</div>
 
   <router-view></router-view>
@@ -24,6 +24,7 @@
     data() {
       return {
         step: 0,
+        // url: document.location.href.split('/'),
       };
     },
     components: {

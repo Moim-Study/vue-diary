@@ -7,12 +7,14 @@
 // font-family: 'Black Han Sans', sans-serif; // logo
 // font-family: 'Nanum Pen Script', cursive; //setting
 // font-family: 'Roboto Mono', monospace; // setting
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   user-select: none;
 }
+
 body,
 html,
 div,
@@ -34,34 +36,42 @@ th {
   font-size: 100%;
   font-family: "Roboto", sans-serif;
 }
+
 a {
   background-color: transparent;
   text-decoration: none;
   color: black;
 }
+
 a:active,
 a:hover {
   outline: 0;
 }
+
 a:visited {
   text-decoration: none;
 }
+
 textarea {
   overflow: auto;
 }
+
 img {
   object-fit: cover;
   width: 100%;
 }
+
 ul,
 ol {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 span {
   display: block;
 }
+
 h1,
 h2,
 h3,
@@ -71,6 +81,7 @@ h6 {
   font-size: 100%;
   font-weight: normal;
 }
+
 button {
   border: 0;
   cursor: pointer;
@@ -79,6 +90,7 @@ button {
   background-color: transparent;
   border-radius: 0;
 }
+
 input,
 select {
   vertical-align: middle;
