@@ -6,9 +6,9 @@
   <router-view></router-view>
 
   <footer id="footer">
-    <div class="footerBtns">
+    <div class="FooterBtns">
       <button @click="step = 1"><i class="fas fa-search"></i></button>
-      <button class="footerPlusBtn" @click="step = 2">
+      <button class="FooterPlusBtn" @click="step = 2">
         <img src="./assets/plus_btn.svg" alt="plus_btn" />
       </button>
       <router-link to="/setting"><i class="fas fa-cog"></i></router-link>
@@ -76,7 +76,7 @@ export default {
   z-index: 2;
 }
 
-.footerBtns {
+.FooterBtns {
   @include flex(space-evenly, center, "");
   border-radius: 50px;
   background-color: white;
@@ -88,7 +88,7 @@ export default {
   }
 }
 
-.footerPlusBtn {
+.FooterPlusBtn {
   background-color: black;
   border-radius: 100%;
   padding: 0.8em;

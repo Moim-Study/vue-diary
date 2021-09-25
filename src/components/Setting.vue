@@ -1,15 +1,15 @@
 <template>
-  <div class="setting">
-    <section class="settingSection1">
-      <span class="settingTitle">Dark Mode</span>
-      <div class="settingToggle">
+  <div class="Setting">
+    <section class="SettingSection1">
+      <span class="SettingTitle">Dark Mode</span>
+      <div class="SettingToggle">
         <div></div>
       </div>
     </section>
 
-    <section class="settingSection1">
-      <span class="settingTitle">Point Color</span>
-      <ul class="settingColor">
+    <section class="SettingSection1">
+      <span class="SettingTitle">Point Color</span>
+      <ul class="SettingColor">
         <li></li>
         <li></li>
         <li></li>
@@ -17,23 +17,23 @@
       </ul>
     </section>
 
-    <section class="settingSection2">
-      <span class="settingTitle left">Font</span>
-      <ul class="settingFont selected">
+    <section class="SettingSection2">
+      <span class="SettingTitle Left">Font</span>
+      <ul class="SettingFont Selected">
         <li>Roboto</li>
         <li>Hello, there</li>
       </ul>
-      <ul class="settingFont">
+      <ul class="SettingFont">
         <li>Roboto Mono</li>
-        <li class="roboto">Hello, there</li>
+        <li class="Roboto">Hello, there</li>
       </ul>
-      <ul class="settingFont">
+      <ul class="SettingFont">
         <li>Nanum Pen Script</li>
         <li class="Nanum">Hello, there</li>
       </ul>
     </section>
 
-    <section class="settingBtns">
+    <section class="SettingBtns">
       <button>Cancel</button>
       <button>Apply</button>
     </section>
@@ -60,33 +60,32 @@ export default {
   flex-direction: $d;
 }
 
-$pointColor: orangered;
-$space: 16px;
+$Space: 16px;
 
-.setting {
-  margin: $space 0;
+.Setting {
+  margin: $Space 0;
 }
 
-.settingSection1 {
+.SettingSection1 {
   @include flex(space-between, center, "");
   padding: 1.1em 2em;
 }
 
-.settingSection2 {
+.SettingSection2 {
   padding: 1.1em 2em;
 }
 
-.settingTitle {
+.SettingTitle {
   font-weight: 600;
   font-size: 1.2em;
 }
 
-.left {
+.Left {
   text-align: left;
-  margin-bottom: $space;
+  margin-bottom: $Space;
 }
 
-.settingToggle {
+.SettingToggle {
   @include object(64px, 35px, "");
   background-color: black;
   border-radius: 25px 25px 25px 25px;
@@ -99,7 +98,7 @@ $space: 16px;
   }
 }
 
-.settingColor {
+.SettingColor {
   @include flex(space-between, center, "");
 
   li {
@@ -120,7 +119,7 @@ $space: 16px;
   }
 }
 
-.settingFont {
+.SettingFont {
   @include object(100%, 40px, "");
   @include flex(space-between, center, "");
   text-align: left;
@@ -136,12 +135,12 @@ $space: 16px;
   }
 }
 
-.selected {
+.Selected {
   font-weight: 500;
   color: black;
 }
 
-.roboto {
+.Roboto {
   font-family: "Roboto Mono", monospace;
   font-size: 1.1em;
 }
@@ -151,7 +150,7 @@ $space: 16px;
   font-size: 1.6em;
 }
 
-.settingBtns {
+.SettingBtns {
   @include flex(space-between, center, row);
   padding: 0 2em;
   margin: 32px 0;

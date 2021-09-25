@@ -1,25 +1,25 @@
 <template>
-  <article class="mainTodoWrap">
-    <ul class="mainTodoTop">
-      <li class="mainTodoTitle">Upcoming To-do</li>
-      <li class="mainTodoAll">See All</li>
+  <article class="MainTodoWrap">
+    <ul class="MainTodoTop">
+      <li class="MainTodoTitle">Upcoming To-do</li>
+      <li class="MainTodoAll">See All</li>
     </ul>
 
-    <ul class="mainTodo">
+    <ul class="MainTodo">
       <li>
-        <label class="mainTodoCheck"></label>
+        <label class="MainTodoCheck"></label>
         Meeting with Client
-        <p class="mainTodoTime">06:58pm</p>
+        <p class="MainTodoTime">06:58pm</p>
       </li>
       <li>
-        <label class="mainTodoCheck"></label>
+        <label class="MainTodoCheck"></label>
         Take my pet to veteran
-        <p class="mainTodoTime">06:58pm</p>
+        <p class="MainTodoTime">06:58pm</p>
       </li>
       <li>
-        <label class="mainTodoCheck"></label>
+        <label class="MainTodoCheck"></label>
         Call CEO for meeting
-        <p class="mainTodoTime">06:58pm</p>
+        <p class="MainTodoTime">06:58pm</p>
       </li>
     </ul>
   </article>
@@ -43,30 +43,30 @@ export default {};
   flex-direction: $d;
 }
 
-$space: 16px;
+$Space: 16px;
 
-.mainTodoWrap {
-  padding: 0 $space;
+.MainTodoWrap {
+  padding: 0 $Space;
   margin-bottom: 24px;
 }
 
-.mainTodoTop {
+.MainTodoTop {
   @include flex(space-between, center, "");
 }
 
-.mainTodoTitle {
-  margin: $space 0;
+.MainTodoTitle {
+  margin: $Space 0;
   text-align: left;
   font-weight: 600;
   font-size: 1.1em;
 }
 
-.mainTodoAll {
+.MainTodoAll {
   font-size: 0.9em;
   color: gray;
 }
 
-.mainTodo {
+.MainTodo {
   li {
     display: flex;
     margin-bottom: 12px;
@@ -76,7 +76,7 @@ $space: 16px;
   }
 }
 
-.mainTodoTime {
+.MainTodoTime {
   font-size: 0.9em;
   color: #ccc;
   position: absolute;
@@ -89,7 +89,7 @@ $space: 16px;
   }
 }
 
-.mainTodoCheck {
+.MainTodoCheck {
   width: 1.5em;
   height: 1.5em;
   border-radius: 100%;

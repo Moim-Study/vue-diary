@@ -1,29 +1,29 @@
 <template>
-  <article id="calendar">
-    <header class="calendarTop">
-      <ul class="currentMonth">
-        <li class="arrowBtn" @click="prevMonth">◀</li>
+  <article id="Calendar">
+    <header class="CalendarTop">
+      <ul class="CurrentMonth">
+        <li class="ArrowBtn" @click="prevMonth">◀</li>
         <li>In {{ month[currentDate.month] }} {{ currentDate.year }}</li>
-        <li class="arrowBtn" @click="nextMonth">▶</li>
+        <li class="ArrowBtn" @click="nextMonth">▶</li>
       </ul>
     </header>
 
     <section>
-      <div class="weekdays">
-        <div class="weekday" v-for="(weekday, i) in weekdays" :key="i">
+      <div class="Weekdays">
+        <div class="Weekday" v-for="(weekday, i) in weekdays" :key="i">
           {{ weekday }}
         </div>
       </div>
-      <div class="date">
+      <div class="Date">
         <div
-          class="dayHidden"
+          class="DayHidden"
           v-for="(n, i) in firstMonthDay - 1"
           :key="'prev' + i"
         >
           {{ prevMonthDay + 1 - firstMonthDay + n }}
         </div>
         <div
-          class="day"
+          class="Day"
           :class="{ active: n === currentDate.date }"
           v-for="(n, i) in currentMonthDays"
           :key="'day' + i"
@@ -31,7 +31,7 @@
           {{ n }}
         </div>
         <div
-          class="dayHidden"
+          class="DayHidden"
           v-for="(n, i) in 43 - (currentMonthDays + firstMonthDay)"
           :key="'next' + i"
         >
@@ -169,19 +169,19 @@ export default {
   }
 }
 
-$pointColor: orangered;
-$space: 16px;
+$PointColor: orangered;
+$Space: 16px;
 
-#calendar {
+#Calendar {
   overflow: hidden;
 }
 
-.calendarTop {
+.CalendarTop {
   @include flex(center, "", column);
-  margin: $space 0;
+  margin: $Space 0;
 }
 
-.currentMonth {
+.CurrentMonth {
   @include flex("", center, "");
 
   li {
@@ -201,7 +201,7 @@ $space: 16px;
   }
 }
 
-.weekdays {
+.Weekdays {
   @include calendarLayout(4px 16px);
   font-size: 0.9em;
   font-weight: 500;
@@ -209,33 +209,33 @@ $space: 16px;
 
   div {
     &:last-child {
-      color: $pointColor;
+      color: $PointColor;
     }
   }
 }
 
-.date {
+.Date {
   @include calendarLayout(16px);
   font-weight: 600;
   color: lightgray;
 
-  .day {
+  .Day {
     color: black;
     padding: 0 6px;
 
     &:nth-child(7n) {
-      color: $pointColor;
+      color: $PointColor;
     }
 
     &:hover {
-      background-color: $pointColor;
+      background-color: $PointColor;
       color: white;
       border-radius: 4px;
     }
   }
-  .active {
-    border: 1px dashed $pointColor;
-    color: $pointColor;
+  .Active {
+    border: 1px dashed $PointColor;
+    color: $PointColor;
     border-radius: 6px;
   }
 }

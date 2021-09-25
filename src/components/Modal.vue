@@ -1,18 +1,18 @@
 <template>
   <div>
-    <div class="dimmedBg" v-if="step == 1 || step == 2"></div>
+    <div class="DimmedBg" v-if="step == 1 || step == 2"></div>
 
-    <div class="subBtns">
+    <div class="SubBtns">
       <ul v-if="step == 2">
-        <li class="subBtn activeBtn">1</li>
-        <li class="subBtn">2</li>
-        <li class="subBtn">3</li>
-        <li class="subBtn">4</li>
+        <li class="SubBtn ActiveBtn">1</li>
+        <li class="SubBtn">2</li>
+        <li class="SubBtn">3</li>
+        <li class="SubBtn">4</li>
       </ul>
     </div>
 
-    <div class="search" v-if="step == 1">
-      <input type="text" class="searchBox" placeholder="무엇을 찾으시나요?" />
+    <div class="Search" v-if="step == 1">
+      <input type="text" class="SearchBox" placeholder="무엇을 찾으시나요?" />
     </div>
   </div>
 </template>
@@ -41,10 +41,10 @@ export default {
   flex-direction: $d;
 }
 
-$pointColor: orangered;
-$circleSize: 3.5em;
+$PointColor: orangered;
+$CircleSize: 3.5em;
 
-.subBtns {
+.SubBtns {
   @include flex(center, "", "");
 
   ul {
@@ -55,12 +55,12 @@ $circleSize: 3.5em;
   }
 }
 
-.subBtn {
-  @include object($circleSize, $circleSize, "");
+.SubBtn {
+  @include object($CircleSize, $CircleSize, "");
   background-color: black;
   border-radius: 100%;
   color: white;
-  line-height: $circleSize;
+  line-height: $CircleSize;
   margin-right: 8px;
   z-index: 2;
 
@@ -69,15 +69,15 @@ $circleSize: 3.5em;
   }
 }
 
-.activeBtn {
-  background-color: $pointColor;
+.ActiveBtn {
+  background-color: $PointColor;
 }
 
-.search {
+.Search {
   @include flex(center, center, "");
 }
 
-.searchBox {
+.SearchBox {
   @include object(92%, 45px, absolute);
   bottom: 7.5rem;
   border: 1px solid black;
@@ -86,7 +86,7 @@ $circleSize: 3.5em;
   z-index: 1;
 }
 
-.dimmedBg {
+.DimmedBg {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
