@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "Modal",
+  name: 'Modal',
   props: {
     modalStatue: Boolean,
     step: Number,
@@ -28,27 +28,16 @@ export default {
 </script>
 
 <style lang="scss">
-@mixin object($w, $h, $p) {
-  width: $w;
-  height: $h;
-  position: $p;
-}
-
-@mixin flex($j, $a, $d) {
-  display: flex;
-  justify-content: $j;
-  align-items: $a;
-  flex-direction: $d;
-}
+@import '../Mixin.scss';
 
 $PointColor: orangered;
 $CircleSize: 3.5em;
 
 .SubBtns {
-  @include flex(center, "", "");
+  @include flex(center, '', '');
 
   ul {
-    @include flex(space-between, "", "");
+    @include flex(space-between, '', '');
     position: absolute;
     margin-bottom: 16px;
     bottom: 110px;
@@ -56,7 +45,7 @@ $CircleSize: 3.5em;
 }
 
 .SubBtn {
-  @include object($CircleSize, $CircleSize, "");
+  @include object('', $CircleSize, $CircleSize);
   background-color: black;
   border-radius: 100%;
   color: white;
@@ -74,12 +63,13 @@ $CircleSize: 3.5em;
 }
 
 .Search {
-  @include flex(center, center, "");
+  @include flex(center, center, '');
 }
 
 .SearchBox {
-  @include object(92%, 45px, absolute);
-  bottom: 7.5rem;
+  @include object('', 92%, 45px);
+  position: absolute;
+  bottom: 6rem;
   border: 1px solid black;
   text-indent: 10px;
   font-size: 14px;
