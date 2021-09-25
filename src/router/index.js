@@ -1,12 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
-import Setting from '../components/Setting.vue';
+import Main from '../views/Main.vue';
+import Setting from '../views/Setting.vue';
 
 const routes = [
-  {
-    path: '/setting',
-    component: Setting,
-  },
   {
     path: '/loading',
     name: 'Loading',
@@ -17,10 +13,17 @@ const routes = [
       import(/* webpackChunkName: "about" */ '../views/Loading.vue'),
   },
   {
+    path: '/',
+    component: Main,
+  },
+  {
     path: '/todo',
     name: 'Todo',
-    component: () =>
-      import('../views/Todo.vue'),
+    component: () => import('../views/Todo.vue'),
+  },
+  {
+    path: '/setting',
+    component: Setting,
   },
 ];
 

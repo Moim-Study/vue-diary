@@ -30,18 +30,7 @@ export default {};
 </script>
 
 <style lang="scss">
-@mixin object($w, $h, $p) {
-  width: $w;
-  height: $h;
-  position: $p;
-}
-
-@mixin flex($j, $a, $d) {
-  display: flex;
-  justify-content: $j;
-  align-items: $a;
-  flex-direction: $d;
-}
+@import '../Mixin.scss';
 
 $Space: 16px;
 
@@ -51,7 +40,7 @@ $Space: 16px;
 }
 
 .MainTodoTop {
-  @include flex(space-between, center, "");
+  @include flex(space-between, center, '');
 }
 
 .MainTodoTitle {
@@ -83,7 +72,7 @@ $Space: 16px;
   right: 0;
 
   &::after {
-    content: " >";
+    content: ' >';
     right: 0;
     color: #ccc;
   }

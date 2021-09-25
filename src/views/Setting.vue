@@ -42,24 +42,14 @@
 
 <script>
 export default {
-  name: "Setting",
+  name: 'Setting',
 };
 </script>
 
 <style lang="scss" scoped>
-@mixin object($w, $h, $p) {
-  width: $w;
-  height: $h;
-  position: $p;
-}
+@import '../Mixin.scss';
 
-@mixin flex($j, $a, $d) {
-  display: flex;
-  justify-content: $j;
-  align-items: $a;
-  flex-direction: $d;
-}
-
+$PointColor: orangered;
 $Space: 16px;
 
 .Setting {
@@ -67,7 +57,7 @@ $Space: 16px;
 }
 
 .SettingSection1 {
-  @include flex(space-between, center, "");
+  @include flex(space-between, center, '');
   padding: 1.1em 2em;
 }
 
@@ -86,23 +76,23 @@ $Space: 16px;
 }
 
 .SettingToggle {
-  @include object(64px, 35px, "");
+  @include object('', 64px, 35px);
   background-color: black;
   border-radius: 25px 25px 25px 25px;
   padding: 4px;
 
   div {
-    @include object(50%, 100%, "");
+    @include object(50%, 100%, '');
     background-color: white;
     border-radius: 100%;
   }
 }
 
 .SettingColor {
-  @include flex(space-between, center, "");
+  @include flex(space-between, center, '');
 
   li {
-    @include object(24px, 24px, "");
+    @include object('', 24px, 24px);
     background-color: darkred;
     border-radius: 100%;
     margin-left: 8px;
@@ -120,8 +110,8 @@ $Space: 16px;
 }
 
 .SettingFont {
-  @include object(100%, 40px, "");
-  @include flex(space-between, center, "");
+  @include object('', 100%, 40px);
+  @include flex(space-between, center, '');
   text-align: left;
   border-bottom: 1px solid black;
   margin-bottom: 8px;
@@ -141,12 +131,12 @@ $Space: 16px;
 }
 
 .Roboto {
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.1em;
 }
 
 .Nanum {
-  font-family: "Nanum Pen Script", cursive;
+  font-family: 'Nanum Pen Script', cursive;
   font-size: 1.6em;
 }
 
@@ -156,7 +146,7 @@ $Space: 16px;
   margin: 32px 0;
 
   button {
-    @include object(45%, 40px, "");
+    @include object('', 45%, 40px);
     font-weight: 500;
 
     &:first-child {
