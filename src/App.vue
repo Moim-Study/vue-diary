@@ -5,7 +5,7 @@
 
   <router-view></router-view>
 
-  <footer id="footer">
+  <footer id="Footer">
     <div class="FooterBtns">
       <button @click="step = 1"><i class="fas fa-search"></i></button>
       <button class="FooterPlusBtn" @click="step = 2">
@@ -66,12 +66,10 @@ export default {
   color: #42b983;
 }
 
-#footer {
-  /* iphone 6/7/8에서 bottom에 붙지 않음? */
-  position: sticky;
+#Footer {
+  position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #eee;
   padding: 24px 3rem;
   z-index: 2;
 }
@@ -79,7 +77,7 @@ export default {
 .FooterBtns {
   @include flex(space-evenly, center, "");
   border-radius: 50px;
-  background-color: white;
+  background-color: #eee;
   color: black;
 
   i {
