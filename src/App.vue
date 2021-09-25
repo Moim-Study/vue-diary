@@ -1,7 +1,10 @@
 <template>
   <Modal :step="step" />
   <!-- <div id="nav" v-if="url[3] !== 'loading'"> -->
-  <div id="nav">menu</div>
+  <div id="nav">
+    <router-link to="/main">Main</router-link>
+    <router-link to="/todo">Todo</router-link>
+  </div>
 
   <router-view></router-view>
 
@@ -36,10 +39,10 @@
 <style lang="scss">
   @import 'App.scss';
 
-  @mixin object($w, $h, $p) {
+  @mixin object($w, $h, $d) {
     width: $w;
     height: $h;
-    position: $p;
+    display: $d;
   }
 
   @mixin flex($j, $a, $d) {
@@ -59,12 +62,13 @@
   }
 
   #nav a {
-    font-weight: bold;
+    font-weight: 300;
     color: #2c3e50;
   }
 
   #nav a.router-link-exact-active {
     color: #42b983;
+    font-weight: bold;
   }
 
   #Footer {
