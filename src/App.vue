@@ -17,84 +17,84 @@
 </template>
 
 <script>
-import Modal from "./components/Modal";
+  import Modal from './components/Modal';
 
-export default {
-  name: "App",
-  data() {
-    return {
-      step: 0,
-    };
-  },
-  components: {
-    Modal,
-  },
-};
+  export default {
+    name: 'App',
+    data() {
+      return {
+        step: 0,
+      };
+    },
+    components: {
+      Modal,
+    },
+  };
 </script>
 
 <style lang="scss">
-@import "App.scss";
+  @import 'App.scss';
 
-@mixin object($w, $h, $p) {
-  width: $w;
-  height: $h;
-  position: $p;
-}
-
-@mixin flex($j, $a, $d) {
-  display: flex;
-  justify-content: $j;
-  align-items: $a;
-  flex-direction: $d;
-}
-
-#app {
-  text-align: center;
-}
-
-#nav {
-  padding: 16px;
-  border: 1px solid red;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-#Footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 24px 3rem;
-  z-index: 2;
-}
-
-.FooterBtns {
-  @include flex(space-evenly, center, "");
-  border-radius: 50px;
-  background-color: #eee;
-  color: black;
-
-  i {
-    @include flex(center, center, "");
-    font-size: 1.5em;
+  @mixin object($w, $h, $p) {
+    width: $w;
+    height: $h;
+    position: $p;
   }
-}
 
-.FooterPlusBtn {
-  background-color: black;
-  border-radius: 100%;
-  padding: 0.8em;
-  color: white;
-
-  img {
-    width: 35px;
-    vertical-align: middle;
+  @mixin flex($j, $a, $d) {
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+    flex-direction: $d;
   }
-}
+
+  #app {
+    text-align: center;
+  }
+
+  #nav {
+    padding: 16px;
+    border: 1px solid red;
+  }
+
+  #nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
+
+  #Footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 24px 3rem;
+    z-index: 2;
+  }
+
+  .FooterBtns {
+    @include flex(space-evenly, center, '');
+    border-radius: 50px;
+    background-color: #eee;
+    color: black;
+
+    i {
+      @include flex(center, center, '');
+      font-size: 1.5em;
+    }
+  }
+
+  .FooterPlusBtn {
+    background-color: black;
+    border-radius: 100%;
+    padding: 0.8em;
+    color: white;
+
+    img {
+      width: 35px;
+      vertical-align: middle;
+    }
+  }
 </style>
