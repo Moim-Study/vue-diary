@@ -36,7 +36,7 @@
 
 <script>
   // https://github.com/dzwillia/vue-simple-progress
-  import AddTodo from '@/components/AddTodo.vue';
+  import AddTodo from './AddTodo.vue';
   export default {
     props: {
       max: Number,
