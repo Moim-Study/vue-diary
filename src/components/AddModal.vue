@@ -3,17 +3,23 @@
     <div class="WhiteScreen">
       <div class="AddTitle" v-text="AddTitle"></div>
       <AddTodo />
+      <div class="AddModalBtn" v-text="'Save' + Add"></div>
     </div>
   </div>
 </template>
 
 <script>
   import AddTodo from '../views/AddTodo.vue';
+
   export default {
     data: function() {
       return {
         AddTitle: {
           default: 'Add',
+          type: String,
+        },
+        Add: {
+          default: 'TimeLine',
           type: String,
         },
       };
