@@ -1,7 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-// import Main from '../views/Main.vue';
+
+import Setting from '../components/Setting.vue';
 
 const routes = [
+  {
+    path: '/setting',
+    component: Setting,
+  },
   {
     path: '/loading',
     name: 'Loading',
@@ -14,11 +19,8 @@ const routes = [
   {
     path: '/todo',
     name: 'Todo',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Todo.vue'),
+      import('../views/Todo.vue'),
   },
 ];
 
