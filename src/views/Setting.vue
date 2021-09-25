@@ -82,7 +82,7 @@ $Space: 16px;
   padding: 4px;
 
   div {
-    @include object(50%, 100%, '');
+    @include object('', 50%, 100%);
     background-color: white;
     border-radius: 100%;
   }
