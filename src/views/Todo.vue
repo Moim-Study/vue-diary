@@ -1,13 +1,17 @@
 <template>
-  <div class="todoContainer">
-    <span class="todoTitle">Goal</span>
-    <progress :max="todoArray.length" :value="doneArray.length">{{
-      doneArray.length
-    }}</progress>
+  <div class="TodoContainer">
+    <span class="TodoTitle">Goal</span>
+    <span class="TodoProgressContainer">
+      <img />
+      <progress :max="todoArray.length" :value="doneArray.length">{{
+        doneArray.length
+      }}</progress>
+      <img />
+    </span>
   </div>
-  <div class="todoContainer">
-    <span class="todoTitle">Todo</span>
-    <div class="todoContents" v-for="(i, j) in todoArray" :key="j">
+  <div class="TodoContainer">
+    <span class="TodoTitle">Todo</span>
+    <div class="TodoContents" v-for="(i, j) in todoArray" :key="j">
       <span>{{ i.primary }}</span>
       <span>{{ i.todo }}</span>
       <span>
@@ -17,25 +21,28 @@
       </span>
     </div>
   </div>
-  <div class="todoContainer">
-    <span class="todoTitle">Done</span>
-    <div class="todoContents doneContents" v-for="(i, j) in doneArray" :key="j">
+  <div class="TodoContainer">
+    <span class="TodoTitle">Done</span>
+    <div class="TodoContents" v-for="(i, j) in doneArray" :key="j">
       <span>{{ i.primary }}</span>
-      <span
-        ><s>{{ i.todo }}</s></span
-      >
+      <span>
+        <s>{{ i.todo }}</s>
+      </span>
       <span><img src="../assets/todo/trash.svg"/></span>
     </div>
   </div>
+  <AddTodo />
 </template>
 
 <script>
   // https://github.com/dzwillia/vue-simple-progress
+  import AddTodo from '@/components/AddTodo.vue';
   export default {
     props: {
       max: Number,
       value: Number,
     },
+    components: { AddTodo },
     data() {
       return {
         todoArray: [
@@ -53,10 +60,10 @@
 
 <style lang="scss" scoped>
   @import '../Mixin.scss';
-  .todoContainer {
+  .TodoContainer {
     @include flex(center, center, column);
     margin-bottom: 30px;
-    .todoTitle {
+    .TodoTitle {
       width: 100vw;
       font: {
         size: 20px;
@@ -64,7 +71,7 @@
         family: 'Roboto Mono', monospace;
       }
     }
-    .todoContents {
+    .TodoContents {
       @include flex(space-between, center, row);
       width: 70%;
       span {
@@ -95,6 +102,23 @@
             }
           }
         }
+      }
+    }
+    .TodoProgressContainer {
+      width: 100%;
+      progress {
+        width: 60%;
+        height: 25px;
+        color: #42b983;
+      }
+      progress::-webkit-progress-inner-element {
+        color: #42b983;
+      }
+      progress::-webkit-progress-value {
+        background: white;
+      }
+      progress::-moz-progress-bar {
+        background: #42b983;
       }
     }
   }
