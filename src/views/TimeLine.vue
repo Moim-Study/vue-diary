@@ -3,7 +3,7 @@
     <nav class="TimeLineTopWrap">
       <div class="TimeLineTop">
         <ul class="TimeLineDays">
-          <li class="TimeLineDay">S</li><li class="TimeLineDay">M</li><li class="TimeLineDay">T</li><li class="TimeLineDay">W</li><li class="TimeLineDay">T</li><li class="TimeLineDay">F</li><li class="TimeLineDay">S</li>
+          <li class="TimeLineDay">M</li><li class="TimeLineDay">T</li><li class="TimeLineDay">W</li><li class="TimeLineDay">T</li><li class="TimeLineDay">F</li><li class="TimeLineDay">S</li><li class="TimeLineDay">S</li>
         </ul>
         <ul class="TimeLineWeeks">
           <li class="TimeLineWeek">
@@ -136,7 +136,7 @@ export default { name: 'TimeLine'};
 
   /* TimeLine 전체 페이지 */
   .TimeLinePage { 
-    @include object('', 720px, auto);
+    @include object('', 100vw, auto);
     position: relative;
     margin: 0 auto;
     border-radius: 5%;
@@ -145,16 +145,14 @@ export default { name: 'TimeLine'};
 
 
   /* TimeLine 상단 파트 */
-  .TimeLinePage .TimeLineTopWrap {
-    @include object('', 720px, 150px);
+  .TimeLineTopWrap {
+    @include object('', 100vw, 12vh);
     position: fixed;
-    top: 0;
     background-color: #FFFFFF;
     border-bottom-left-radius: 25px; 
     border-bottom-right-radius: 25px;
     box-shadow: 0px 5px 5px #DDDDDD;
     margin-bottom: 10px;
-    z-index: 3;
   }
 
   .TimeLineTop {
@@ -165,14 +163,13 @@ export default { name: 'TimeLine'};
   }
 
   .TimeLineDays {
-      @include object('', 100%, 50px);
-      padding: 0px 25px 0;
+      @include object(flex, 100%, 5vh);
+      flex-flow: wrap row;
+      justify-content: space-evenly;
       &>li{
-        @include object('', 50px, inherit);
-        line-height: 50px;
+        @include object(block, 5vh, inherit);
+        line-height: 5vh;
         text-align: center;
-        float: left;
-        margin-right: 50px;
         color: #BBBBBB;
         font-weight: 700;
       }
@@ -182,18 +179,18 @@ export default { name: 'TimeLine'};
   }
 
   .TimeLineWeeks { 
-    @include object('', 600%, 50px); 
+    @include object(flex, 600%, 5vh);
     &>li{
-      @include object('', 720px, inherit);
+      @include object('', 100vw, inherit);
       float: left;
       &>ol{
-        @include object('', 100%, inherit);
-        padding: 0px 25px 0;
+        @include object(flex, 100%, inherit);
+        flex-flow: wrap row;
+        justify-content: space-evenly;
         &>li{
-          @include object('', 50px, inherit);
+          @include object('', 5vh, inherit);
           float: left;
-          margin-right: 50px;
-          line-height: 50px;
+          line-height: 5vh;
           font-weight: 700;
           border-radius: 30%;
         }
@@ -203,13 +200,13 @@ export default { name: 'TimeLine'};
       }
     }
   }
-  .TodayDate { background-color: cornflowerblue; color: #FFFFFF;}
+  .TodayDate { background-color: orangered; color: #FFFFFF;}
 
 
 
   /* TimeLine Main */
   .TimeLinePage .TimeLineMainWrap {
-    @include object('', 720px, auto);
+    @include object('', 100vw, auto);
     padding: 0 25px 0;
     z-index: 1;
   }

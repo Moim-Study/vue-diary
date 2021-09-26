@@ -46,21 +46,27 @@
   @import 'Mixin.scss';
 
   #app {
+    box-sizing: border-box;
     text-align: center;
   }
 
   #nav {
-    padding: 16px;
-    border: 1px solid red;
+    @include object(flex, 100%, 7vh);
+    flex-flow: wrap row;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 1vh 6vh 1vh;
   }
 
   #nav a {
-    font-weight: bold;
-    color: #2c3e50;
+    height: 25px;
+    line-height: 25px;
+    font-weight: 300;
   }
 
   #nav a.router-link-exact-active {
-    color: #42b983;
+    color: orangered;
+    font-weight: 700;
   }
 
   #Footer {
