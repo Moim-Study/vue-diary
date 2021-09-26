@@ -4,11 +4,11 @@
       <label class="PrimaryContainer">
         <span>Primary</span>
         <span class="PrimaryButtons">
-          <button value="🔴">🔴</button>
-          <button value="🟠">🟠</button>
-          <button value="🟡">🟡</button>
-          <button value="🟢">🟢</button>
-          <button value="🔵">🔵</button>
+          <button @click="PrimaryBtnFunc('red')" value="red">🔴</button>
+          <button @click="PrimaryBtnFunc('orange')" value="orange">🟠</button>
+          <button @click="PrimaryBtnFunc('yellow')" value="yellow">🟡</button>
+          <button @click="PrimaryBtnFunc('green')" value="green">🟢</button>
+          <button @click="PrimaryBtnFunc('blue')" value="blue">🔵</button>
         </span>
       </label>
       <label class="Tip"><b>Tip!</b><b>Emargency</b></label>
@@ -26,6 +26,31 @@
 <script>
   export default {
     name: 'AddTodo',
+    setup() {
+      return {
+        PrimaryBtnFunc(color) {
+          switch (color) {
+            case 'red':
+              console.log('red');
+              break;
+            case 'orange':
+              console.log('orange');
+              break;
+            case 'yellow':
+              console.log('yellow');
+              break;
+            case 'green':
+              console.log('green');
+              break;
+            case 'blue':
+              console.log('blue');
+              break;
+            default:
+              break;
+          }
+        },
+      };
+    },
   };
 </script>
 
@@ -34,13 +59,17 @@
 
   .AddTodoPrimary {
     margin-bottom: 10%;
-    width: 90%;
-    margin: 10% auto;
+    width: 100%;
+    margin: 20px auto;
+    font-family: 'Roboto Mono', monospace;
     .PrimaryContainer {
       @include flex(space-between, center, row);
       width: 80%;
       flex-wrap: nowrap;
       margin: 0 auto;
+      & > span:first-of-type {
+        font-weight: 600;
+      }
     }
     .Tip {
       width: 80%;
@@ -61,15 +90,14 @@
         text-align: center;
         &:focus,
         &:focus-visible {
-          width: 25px;
-          height: 25px;
+          font-size: 16px;
         }
       }
     }
   }
 
   .AddTodo {
-    width: 70%;
+    width: 80%;
     height: auto;
     padding: 3%;
     font-weight: 500;

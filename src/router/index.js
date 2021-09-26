@@ -6,7 +6,7 @@ import Todo from '../views/Todo.vue';
 
 const routes = [
   {
-    path: '/main',
+    path: '/',
     component: Main,
   },
   {

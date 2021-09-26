@@ -12,23 +12,31 @@
   <div class="TodoContainer">
     <span class="TodoTitle">Todo</span>
     <div class="TodoContents" v-for="(i, j) in todoArray" :key="j">
-      <span>{{ i.primary }}</span>
-      <span>{{ i.todo }}</span>
-      <span>
-        <img src="../assets/todo/edit.svg" />
-        <img src="../assets/todo/check-circle.svg" />
-        <img src="../assets/todo/trash.svg" />
-      </span>
+      <label>
+        <span class="TodoPrimary">{{ i.primary }}</span>
+        <span class="Todo">{{ i.todo }}</span>
+        <span class="TodoDay">{{ i.day }}</span>
+        <span class="TodoTime">{{ i.time }}</span>
+        <span class="TodoIcons">
+          <img src="../assets/todo/edit.svg" />
+          <img src="../assets/todo/check-circle.svg" />
+          <img src="../assets/todo/trash.svg" />
+        </span>
+      </label>
     </div>
   </div>
   <div class="TodoContainer">
     <span class="TodoTitle">Done</span>
     <div class="TodoContents" v-for="(i, j) in doneArray" :key="j">
-      <span>{{ i.primary }}</span>
-      <span>
-        <s>{{ i.todo }}</s>
-      </span>
-      <span><img src="../assets/todo/trash.svg"/></span>
+      <label>
+        <span class="TodoPrimary">{{ i.primary }}</span>
+        <span class="Todo">
+          <s>{{ i.todo }}</s>
+        </span>
+        <span class="TodoDay">{{ i.day }}</span>
+        <span class="TodoTime">{{ i.time }}</span>
+        <span class="TodoIcons"><img src="../assets/todo/trash.svg"/></span>
+      </label>
     </div>
   </div>
   <AddTodo />
@@ -46,13 +54,40 @@
     data() {
       return {
         todoArray: [
-          { todo: '강아지 산책시키기', primary: '🔴' },
-          { todo: '뷰 공부하기', primary: '🟢' },
-          { todo: '밥먹기', primary: '🔵' },
-          { todo: 'Todo 예시1', primary: '🟡' },
-          { todo: 'Todo 예시2', primary: '🟠' },
+          {
+            todo: '강아지 산책시키기',
+            primary: '🔴',
+            day: '2021.09.26',
+            time: '14:51',
+          },
+          {
+            todo: '뷰 공부하기',
+            primary: '🟢',
+            day: '2021.09.25',
+            time: '15:40',
+          },
+          { todo: '밥먹기', primary: '🔵', day: '2021.09.26', time: '14:51' },
+          {
+            todo: 'Todo 예시1',
+            primary: '🟡',
+            day: '2021.09.26',
+            time: '14:51',
+          },
+          {
+            todo: 'Todo 예시2',
+            primary: '🟠',
+            day: '2021.09.26',
+            time: '14:51',
+          },
         ],
-        doneArray: [{ todo: 'Done 예시1', primary: '🟠' }],
+        doneArray: [
+          {
+            todo: 'Done 예시1',
+            primary: '🟠',
+            day: '2021.09.24',
+            time: '21:00',
+          },
+        ],
       };
     },
   };
@@ -67,28 +102,45 @@
       width: 100vw;
       font: {
         size: 20px;
-        weight: 500;
+        weight: 600;
         family: 'Roboto Mono', monospace;
       }
     }
     .TodoContents {
-      @include flex(space-between, center, row);
-      width: 70%;
-      span {
-        display: inline-block;
-        &:first-of-type {
+      @include flex(space-between, center, column);
+      width: 80%;
+      & > label {
+        width: 100%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        span {
+          height: 100%;
+          line-height: 30px;
+        }
+        .TodoPrimary {
           width: 5%;
           font-size: 10px;
-          line-height: 2.5;
         }
-        &:nth-of-type(2) {
-          width: 65%;
+        .Todo {
+          width: 50%;
           text: {
             align: left;
             indent: 10px;
           }
         }
-        &:last-of-type {
+        .TodoDay {
+          width: 8%;
+          font-size: 10px;
+          text-align: right;
+        }
+        .TodoTime {
+          width: 7%;
+          padding-left: 5px;
+          font-size: 10px;
+          text-align: left;
+        }
+        .TodoIcons {
           width: 30%;
           text-align: right;
           img {
@@ -107,7 +159,7 @@
     .TodoProgressContainer {
       width: 100%;
       progress {
-        width: 60%;
+        width: 80%;
         height: 25px;
         color: #42b983;
       }
