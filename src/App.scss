@@ -7,13 +7,22 @@
 // font-family: 'Black Han Sans', sans-serif; // logo
 // font-family: 'Nanum Pen Script', cursive; //setting
 // font-family: 'Roboto Mono', monospace; // setting
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   user-select: none;
-  font-family: 'Roboto', sans-serif;
+  font: {
+    family: 'Roboto', sans-serif;
+    size: 0.8em;
+  }
+}
+
+%header {
+  font: {
+    size: 1.3em;
+    weight: 600;
+  }
 }
 
 body,

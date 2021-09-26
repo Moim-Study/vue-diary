@@ -101,9 +101,8 @@
     .TodoTitle {
       width: 100vw;
       font: {
-        size: 20px;
+        size: 1.3em;
         weight: 600;
-        family: 'Roboto Mono', monospace;
       }
     }
     .TodoContents {
