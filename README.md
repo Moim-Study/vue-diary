@@ -58,11 +58,12 @@
 >
 > #### 희조
 >
-> ##### Diary
+> ##### Diary Function
 >
 > > 1. Get Weather API
 > > 2. Add Diary Image
 > > 3. Get Day API
+> > 4. Diary Create, Modify, Delete
 
 ## Project setup
 
