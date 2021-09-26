@@ -60,11 +60,8 @@
   .AddTodoPrimary {
     margin-bottom: 10%;
     width: 100%;
-    margin: 20px auto;
-    font-family: 'Roboto Mono', monospace;
     .PrimaryContainer {
       @include flex(space-between, center, row);
-      width: 80%;
       flex-wrap: nowrap;
       margin: 0 auto;
       & > span:first-of-type {
@@ -72,7 +69,6 @@
       }
     }
     .Tip {
-      width: 80%;
       margin: 10px auto 0;
       text-align: left;
       font-size: 11px;
@@ -97,7 +93,7 @@
   }
 
   .AddTodo {
-    width: 80%;
+    width: 100%;
     height: auto;
     padding: 3%;
     font-weight: 500;
