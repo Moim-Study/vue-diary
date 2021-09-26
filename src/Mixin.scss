@@ -1,13 +1,6 @@
+   
 @charset "utf-8";
 
-<<<<<<< HEAD
-@mixin object($d, $p, $w, $h){
-    display:$d;
-    position: $p;
-    width: $w;
-    height: $h;
-}
-=======
 @mixin object($d, $w, $h) {
   display: $d;
   width: $w;
@@ -19,4 +12,3 @@
   align-items: $a;
   flex-direction: $d;
 }
->>>>>>> e8f45a172a9633c79bf843bcc13919fff90f1174
