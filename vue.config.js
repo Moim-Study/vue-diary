@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/vue-diary',
+  publicPath: '/vue-diary/public',
 };
