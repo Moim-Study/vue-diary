@@ -8,7 +8,6 @@
     <router-link to="/diary">Diary</router-link>
   </div>
   <router-view></router-view>
-
   <footer id="Footer">
     <div class="FooterBtns">
       <button @click="step = 1">

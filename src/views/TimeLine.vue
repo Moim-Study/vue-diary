@@ -149,8 +149,6 @@ export default { name: 'TimeLine'};
     @include object('', 100vw, 12vh);
     position: fixed;
     background-color: #FFFFFF;
-    border-bottom-left-radius: 25px; 
-    border-bottom-right-radius: 25px;
     box-shadow: 0px 5px 5px #DDDDDD;
     margin-bottom: 10px;
   }
