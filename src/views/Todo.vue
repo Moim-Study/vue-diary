@@ -124,9 +124,10 @@
         }
         .Todo {
           width: 50%;
+          font-size: 0.8em;
           text: {
             align: left;
-            indent: 10px;
+            indent: 5px;
           }
         }
         .TodoDay {
