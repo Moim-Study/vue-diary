@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Loading from '../views/Loading.vue';
 import Main from '../views/Main.vue';
 import Setting from '../views/Setting.vue';
+import Todo from '../views/Todo.vue';
 import Diary from '../views/Diary.vue';
 
 const routes = [
