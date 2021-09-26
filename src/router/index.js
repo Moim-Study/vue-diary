@@ -1,16 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import Diary from '../views/Diary.vue';
 import Loading from '../views/Loading.vue';
 import Main from '../views/Main.vue';
 import Setting from '../views/Setting.vue';
-import Todo from '../views/Todo.vue';
-import Diary from '../views/Diary.vue';
 import TimeLine from '../views/TimeLine.vue';
+import Todo from '../views/Todo.vue';
 
 /* 이걸 해당 .vue 스크립트에서 export할 때 name으로 지정해줘야 함 - 나무효크 필기 */
 
 const routes = [
   {
     path: '/',
+    name: 'Main',
     component: Main,
   },
   {
@@ -21,14 +22,6 @@ const routes = [
     path: '/loading',
     name: 'Loading',
     component: Loading,
-
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    // component: () =>
-    //   import(/* webpackChunkName: "about" */ '../views/Loading.vue'),
-    name: 'Main',
-    component: Main,
   },
   {
     path: '/setting',
@@ -48,17 +41,15 @@ const routes = [
     component: Todo,
   },
   {
-    {
     path: '/diary',
     name: 'Diary',
     component: Diary,
-  }
+  },
   {
     path: '/timeline',
     name: 'TimeLine',
     component: TimeLine,
   },
-
 ];
 
 const router = createRouter({
