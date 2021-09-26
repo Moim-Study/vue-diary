@@ -1,6 +1,10 @@
 <template>
   <Modal :step="step" />
   <!-- <div id="nav" v-if="url[3] !== 'loading'"> -->
+  <div id="nav">
+    <router-link to="/">Main</router-link>
+    <router-link to="/todo">Todo</router-link>
+  </div>
 
   <router-view></router-view>
 
@@ -37,6 +41,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 @import 'App.scss';
 @import 'Mixin.scss';
 
@@ -77,6 +82,7 @@ export default {
     @include flex(center, center, '');
   }
 }
+
 
 .FooterPlusBtn {
   @include object('', 4em, 4em);

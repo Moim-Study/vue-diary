@@ -1,34 +1,38 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import Loading from '../views/Loading.vue';
 import Main from '../views/Main.vue';
 import Setting from '../views/Setting.vue';
-/* 이걸 해당 .vue 스크립트에서 export할 때 name으로 지정해줘야 함 - 나무효크 필기 */
+import Todo from '../views/Todo.vue';
 import TimeLine from '../views/TimeLine.vue';
+
+/* 이걸 해당 .vue 스크립트에서 export할 때 name으로 지정해줘야 함 - 나무효크 필기 */
 
 const routes = [
   {
-    path: '/loading',
-    name: 'Loading',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Loading.vue'),
+    path: '/',
+    name: 'Main',
+    component: Main,
   },
   {
-    path: '/',
-    component: Main,
+    path: '/setting',
+    name: 'Setting',
+    component: Setting,
+  },
+  {
+    path: '/loading',
+    name: 'Loading',
+    component: Loading,
+    // component: () =>
+    //   import(/* webpackChunkName: "about" */ '../views/Loading.vue'),
   },
   {
     path: '/todo',
     name: 'Todo',
-    component: () => import('../views/Todo.vue'),
-  },
-  {
-    path: '/setting',
-    component: Setting,
+    component: Todo,
   },
   {
     path: '/timeline',
+    name: 'TimeLine',
     component: TimeLine,
   },
 ];
