@@ -1,5 +1,15 @@
 # Vue-Study
 
+[Go Viary](https://moim-study.github.io/vue-diary/) _1.0.0 ver_
+
+<details>
+    <summary>Product Release Notes</summary>
+
+- 1.0.0
+  - Test 배포
+
+</details>
+
 _2021.09.01_
 
 ## 스터디 목표
