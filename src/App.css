@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Roboto:wght@100;300;400;500;700;900&display=swap%27");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap%27");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto:wght@100&display=swap%27");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body,
+html,
+div,
+span,
+label,
+section,
+aside,
+footer,
+header,
+nav,
+video,
+table,
+tr,
+td,
+th {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: black;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+textarea {
+  overflow: auto;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+span {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  outline: 0 none;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+/*# sourceMappingURL=App.css.map */
