@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Main from '../views/Main.vue';
 import Setting from '../views/Setting.vue';
+/* 이걸 해당 .vue 스크립트에서 export할 때 name으로 지정해줘야 함 - 나무효크 필기 */
+import TimeLine from '../views/TimeLine.vue';
 
 const routes = [
   {
@@ -24,6 +26,10 @@ const routes = [
   {
     path: '/setting',
     component: Setting,
+  },
+  {
+    path: '/timeline',
+    component: TimeLine,
   },
 ];
 

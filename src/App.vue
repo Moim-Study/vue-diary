@@ -3,7 +3,6 @@
   <!-- <div id="nav" v-if="url[3] !== 'loading'"> -->
 
   <router-view></router-view>
-
   <footer id="Footer">
     <div class="FooterBtns">
       <button @click="step = 1">
