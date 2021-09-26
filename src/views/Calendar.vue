@@ -44,32 +44,34 @@
 
 <script>
 export default {
-  name: "Calendar",
+  name: 'Calendar',
   data() {
     return {
-      weekdays: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+      weekdays: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
       weekdayNames: [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
       ],
+
       month: [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
       ],
+
       currentDate: {
         date: 0,
         month: 0,
@@ -144,17 +146,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@mixin object($w, $h, $p) {
-  width: $w;
-  height: $h;
-  position: $p;
-}
-@mixin flex($j, $a, $d) {
-  display: flex;
-  justify-content: $j;
-  align-items: $a;
-  flex-direction: $d;
-}
+@import '../Mixin.scss';
 @mixin calendarLayout($property) {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -177,12 +169,12 @@ $Space: 16px;
 }
 
 .CalendarTop {
-  @include flex(center, "", column);
+  @include flex(center, '', column);
   margin: $Space 0;
 }
 
 .CurrentMonth {
-  @include flex("", center, "");
+  @include flex('', center, '');
 
   li {
     width: 20%;

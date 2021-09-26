@@ -3,24 +3,25 @@ import Loading from '../views/Loading.vue';
 import Main from '../views/Main.vue';
 import Setting from '../views/Setting.vue';
 import Todo from '../views/Todo.vue';
+import TimeLine from '../views/TimeLine.vue';
+
+/* 이걸 해당 .vue 스크립트에서 export할 때 name으로 지정해줘야 함 - 나무효크 필기 */
 
 const routes = [
   {
     path: '/',
+    name: 'Main',
     component: Main,
   },
   {
     path: '/setting',
+    name: 'Setting',
     component: Setting,
   },
   {
     path: '/loading',
     name: 'Loading',
     component: Loading,
-
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     // component: () =>
     //   import(/* webpackChunkName: "about" */ '../views/Loading.vue'),
   },
@@ -28,6 +29,11 @@ const routes = [
     path: '/todo',
     name: 'Todo',
     component: Todo,
+  },
+  {
+    path: '/timeline',
+    name: 'TimeLine',
+    component: TimeLine,
   },
 ];
 
