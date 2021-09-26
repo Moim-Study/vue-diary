@@ -1,4 +1,4 @@
 module.exports = {
-  publicPath: '/vue-diary',
+  publicPath: '/<vue-diary>',
   outputDir: 'docs',
 };
