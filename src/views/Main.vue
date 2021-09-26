@@ -1,12 +1,19 @@
 <template>
-  <div class="home"></div>
+  <Calendar />
+  <MainTodo />
 </template>
 
 <script>
-  // @ is an alias to /src
+import Calendar from "./Calendar";
+import MainTodo from "./MainTodo";
 
-  export default {
-    name: 'Home',
-    components: {},
-  };
+export default {
+  name: "Main",
+  components: {
+    Calendar,
+    MainTodo,
+  },
+};
 </script>
+
+<style></style>
