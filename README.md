@@ -76,6 +76,8 @@ npm run serve
 
 ```
 npm run build
+
+<!-- 배포시 build 후 push -->
 ```
 
 ### Lints and fixes files
