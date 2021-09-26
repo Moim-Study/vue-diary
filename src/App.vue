@@ -2,6 +2,11 @@
   <Modal :step="step" />
   <!-- <div id="nav" v-if="url[3] !== 'loading'"> -->
 
+<div id="nav">
+    <router-link to="/main">Main</router-link>
+    <router-link to="/todo">Todo</router-link>
+    <router-link to="/diary">Diary</router-link>
+  </div>
   <router-view></router-view>
 
   <footer id="Footer">
