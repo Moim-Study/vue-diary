@@ -1,11 +1,12 @@
 # Vue-Study
 
-[Go Viary](https://moim-study.github.io/vue-diary/) <sub>_1.0.0 ver_</sub>
+## [Go Viary](https://moim-study.github.io/vue-diary/) <sub>_1.0.0 ver_</sub>
 
 <details>
     <summary>Product Release Notes</summary>
-
-- 1.0.0
+<!-- 펼치기 / 접기 한 줄 띄기 필수 -->
+    
+- 1.0.0 ver
   - Test 배포
 
 </details>
@@ -76,9 +77,8 @@ npm run serve
 
 ```
 npm run build
-
-<!-- 배포시 build 후 push -->
 ```
+<!-- 배포시 build 후 push -->
 
 ### Lints and fixes files
 
