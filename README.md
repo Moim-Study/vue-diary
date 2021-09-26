@@ -1,6 +1,6 @@
 # Vue-Study
 
-[Go Viary](https://moim-study.github.io/vue-diary/) _1.0.0 ver_
+[Go Viary](https://moim-study.github.io/vue-diary/) <sub>_1.0.0 ver_</sub>
 
 <details>
     <summary>Product Release Notes</summary>
