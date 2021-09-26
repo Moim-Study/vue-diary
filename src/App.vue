@@ -18,11 +18,6 @@
     </div>
   </footer>
 </template>
-<script>
-export default {
-  
-}
-</script>
 
 <script>
 import Modal from './views/Modal';
