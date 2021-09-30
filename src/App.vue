@@ -1,12 +1,14 @@
 <template>
   <Modal :step="step" />
   <!-- <div id="nav" v-if="url[3] !== 'loading'"> -->
-  <div id="nav">
-    <router-link to="/">Main</router-link>
-    <router-link to="/timeline">TimeLine</router-link>
-    <router-link to="/todo">Todo</router-link>
-    <router-link to="/diary">Diary</router-link>
-  </div>
+  <header class="top" id="top">
+    <div class="nav" id="nav">
+      <router-link to="/">Main</router-link>
+      <router-link to="/timeline">TimeLine</router-link>
+      <router-link to="/todo">Todo</router-link>
+      <router-link to="/diary">Diary</router-link>
+    </div>
+  </header>
   <router-view></router-view>
   <footer id="Footer">
     <div class="FooterBtns">
@@ -49,17 +51,23 @@
     text-align: center;
   }
 
+  /* 상단 네비게이션 */
+  header {
+    @include object(block, 100%, 7vh);
+    padding: 1vh 6vh 1vh;
+    position: relative;
+  }
+
   #nav {
-    @include object(flex, 100%, 7vh);
+    @include object(flex, 100%, 100%);
     flex-flow: wrap row;
     justify-content: space-evenly;
     align-content: center;
-    padding: 1vh 6vh 1vh;
   }
 
   #nav a {
-    height: 25px;
-    line-height: 25px;
+    height: 5vh;
+    line-height: 5vh;
     font-weight: 300;
   }
 

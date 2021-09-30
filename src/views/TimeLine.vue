@@ -7,7 +7,16 @@
         </ul>
         <ul class="TimeLineWeeks">
           <li class="TimeLineWeek">
-            <ol class="TimeLineDates">
+            <ol class="TimeLineDates1">
+              <!-- 
+              <li class="TimeLineDate" id="TimeLineDate1" @click="MakeToday(1)">1</li>
+              <li class="TimeLineDate" id="TimeLineDate2" @click="MakeToday(2)">2</li>
+              <li class="TimeLineDate TodayDate" id="TimeLineDate3" @click="MakeToday(3)">3</li>
+              <li class="TimeLineDate" id="TimeLineDate4" @click="MakeToday(4)">4</li>
+              <li class="TimeLineDate" id="TimeLineDate5" @click="MakeToday(5)">5</li>
+              <li class="TimeLineDate" id="TimeLineDate6" @click="MakeToday(6)">6</li>
+              <li class="TimeLineDate" id="TimeLineDate7" @click="MakeToday(7)">7</li> 
+              -->
               <li class="TimeLineDate">1</li>
               <li class="TimeLineDate">2</li>
               <li class="TimeLineDate TodayDate">3</li>
@@ -128,7 +137,30 @@
 </template>
 
 <script> 
-export default { name: 'TimeLine'}; 
+  export default { 
+    name: 'TimeLine',
+    methods: {
+      // MakeToday(num){
+        // let i = 0;
+        // let len = document.getElementById('TimeLineDates1>li').length;
+        // switch(num){
+        //   case 1:
+        //     while()
+        //   break;
+        // }
+        // console.log(num, len);
+
+        // document.getElementById('TimeLineDate1').className += ' TodayDate';
+        // document.getElementById('TimeLineDate2').className += ' TodayDate';
+        // document.getElementById('TimeLineDate3').className += ' TodayDate';
+        // document.getElementById('TimeLineDate4').className += ' TodayDate';
+        // document.getElementById('TimeLineDate5').className += ' TodayDate';
+        // document.getElementById('TimeLineDate6').className += ' TodayDate';
+        // document.getElementById('TimeLineDate7').className += ' TodayDate';
+      // }
+    },
+  }; 
+  
 </script>
 
 <style lang="scss" scoped>
@@ -137,9 +169,10 @@ export default { name: 'TimeLine'};
   /* TimeLine 전체 페이지 */
   .TimeLinePage { 
     @include object('', 100vw, auto);
-    position: relative;
     margin: 0 auto;
     border-radius: 5%;
+    font-size: 0.8em;
+    font-weight: 600;
   }
 
 
@@ -147,7 +180,9 @@ export default { name: 'TimeLine'};
   /* TimeLine 상단 파트 */
   .TimeLineTopWrap {
     @include object('', 100vw, 12vh);
-    position: fixed;
+    // 헤더가 안보이는 시점부터 최상단에 고정시킴 - 210930
+    position: sticky;
+    top: 0px;
     background-color: #FFFFFF;
     box-shadow: 0px 5px 5px #DDDDDD;
     margin-bottom: 10px;
@@ -157,7 +192,9 @@ export default { name: 'TimeLine'};
     @include object(flex, 100%, inherit);  
     flex-flow: column wrap;
     justify-content: flex-start;
-    overflow: hidden;                 // 날짜가 일주일 단위로 swipe 되도록 함
+    overflow: hidden;
+    // swiper API 사용할건가요? - 210930
+    // https://swiperjs.com/demos
   }
 
   .TimeLineDays {
@@ -169,7 +206,6 @@ export default { name: 'TimeLine'};
         line-height: 5vh;
         text-align: center;
         color: #BBBBBB;
-        font-weight: 700;
       }
       &>li:last-child {
         margin-right: 0;
@@ -241,9 +277,11 @@ export default { name: 'TimeLine'};
     flex-flow: wrap column;
     justify-content: space-evenly;
     align-items: flex-start;
+    // 색상은 랜덤으로? 지정색으로? 시간대 별로? 중요도?  - 210930
     &>li{
       @include object('', 100%, 100px);
       border: 0.5px solid #BBBBBB;
+      border-radius: 10px;
     }
   }
 </style>

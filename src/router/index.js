@@ -3,15 +3,8 @@ import Diary from '../views/Diary.vue';
 import Loading from '../views/Loading.vue';
 import Main from '../views/Main.vue';
 import Setting from '../views/Setting.vue';
-<<<<<<< HEAD
 import TimeLine from '../views/TimeLine.vue';
 import Todo from '../views/Todo.vue';
-
-/* 이걸 해당 .vue 스크립트에서 export할 때 name으로 지정해줘야 함 - 나무효크 필기 */
-=======
-/* 이걸 해당 .vue 스크립트에서 export할 때 name으로 지정해줘야 함 - 나무효크 필기 */
-import TimeLine from '../views/TimeLine.vue';
->>>>>>> 1a4906778c99628f994a9a08bd9abbc7f9b28c82
 
 const routes = [
   {
@@ -53,10 +46,6 @@ const routes = [
   {
     path: '/timeline',
     name: 'TimeLine',
-    component: TimeLine,
-  },
-  {
-    path: '/timeline',
     component: TimeLine,
   },
 ];
