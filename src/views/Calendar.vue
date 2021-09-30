@@ -185,7 +185,7 @@ $Space: 16px;
     &:nth-child(2) {
       width: 60%;
       font-weight: 600;
-      font-size: 1.2em;
+      font-size: 1.6em;
     }
     &:nth-child(3) {
       text-align: left;
@@ -195,7 +195,7 @@ $Space: 16px;
 
 .Weekdays {
   @include calendarLayout(4px 16px);
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 500;
   background-color: #eee;
 
@@ -208,7 +208,7 @@ $Space: 16px;
 
 .Date {
   @include calendarLayout(16px);
-  grid-template-rows: repeat(6, minmax(1.3em, 1.3em));
+  grid-template-rows: repeat(6, minmax(1.5em, 1.3em));
   font-weight: 600;
   color: lightgray;
 
