@@ -8,9 +8,9 @@
 
     <div class="SubBtns">
       <ul v-if="showModal == true && step == 2">
-        <li class="SubBtn" @click="showAddTimeline">1</li>
-        <li class="SubBtn" @click="showAddTodo">2</li>
-        <li class="SubBtn" @click="showAddDiary">3</li>
+        <li class="SubBtn" @click="showAddTimeline">Timeline</li>
+        <li class="SubBtn" @click="showAddTodo">To-do</li>
+        <li class="SubBtn" @click="showAddDiary">Diary</li>
       </ul>
     </div>
 
@@ -74,13 +74,13 @@ export default {
 @import '../Mixin.scss';
 
 $PointColor: orangered;
-$CircleSize: 3rem;
+$CircleSize: 4.5rem;
 
 .SubBtns {
   @include flex(center, '', '');
 
   ul {
-    @include flex(space-between, '', '');
+    @include flex(space-between, center, '');
     position: absolute;
     margin-bottom: 16px;
     bottom: 5rem;
@@ -92,9 +92,9 @@ $CircleSize: 3rem;
   background-color: $PointColor;
   border-radius: 100%;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: $CircleSize;
-  margin-right: 8px;
+  margin-right: 1em;
   z-index: 2;
 
   &:last-child {
