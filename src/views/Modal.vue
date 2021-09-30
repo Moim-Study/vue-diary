@@ -1,37 +1,80 @@
 <template>
-  <div>
-    <div class="DimmedBg" v-if="step == 1 || step == 2"></div>
+  <div class="ModalWrap">
+    <div
+      class="DimmedBg"
+      @click="$emit('modalStatus')"
+      v-if="showModal == true"
+    ></div>
 
     <div class="SubBtns">
-      <ul v-if="step == 2">
-        <li class="SubBtn ActiveBtn">1</li>
-        <li class="SubBtn">2</li>
-        <li class="SubBtn">3</li>
-        <li class="SubBtn">4</li>
+      <ul v-if="showModal == true && step == 2">
+        <li class="SubBtn" @click="showAddTimeline">1</li>
+        <li class="SubBtn" @click="showAddTodo">2</li>
+        <li class="SubBtn" @click="showAddDiary">3</li>
       </ul>
     </div>
 
-    <div class="Search" v-if="step == 1">
+    <div class="Search" v-if="showModal == true && step == 1">
       <input type="text" class="SearchBox" placeholder="무엇을 찾으시나요?" />
     </div>
   </div>
+
+  <AddTimeline v-if="addTimeline == true" />
+  <AddModal v-if="addTodo == true" />
+  <ModalDiary v-if="addDiary == true" />
 </template>
 
 <script>
+import AddTimeline from '../components/AddTimeline';
+import AddModal from '../components/AddModal';
+import ModalDiary from '../components/ModalDiary';
+
 export default {
   name: 'Modal',
+  data() {
+    return {
+      addTimeline: false,
+      addTodo: false,
+      addDiary: false,
+    };
+  },
+  methods: {
+    showAddTimeline() {
+      this.addTimeline = true;
+      this.addTodo = false;
+      this.addDiary = false;
+      this.$emit('modalStatus');
+    },
+    showAddTodo() {
+      this.addTimeline = false;
+      this.addTodo = true;
+      this.addDiary = false;
+      this.$emit('modalStatus');
+    },
+    showAddDiary() {
+      this.addTimeline = false;
+      this.addTodo = false;
+      this.addDiary = true;
+      this.$emit('modalStatus');
+    },
+  },
   props: {
-    modalStatue: Boolean,
+    showModal: Boolean,
     step: Number,
+  },
+  components: {
+    AddTimeline,
+    AddModal,
+    ModalDiary,
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../Mixin.scss';
 
 $PointColor: orangered;
-$CircleSize: 3.5em;
+$CircleSize: 3rem;
 
 .SubBtns {
   @include flex(center, '', '');
@@ -40,15 +83,16 @@ $CircleSize: 3.5em;
     @include flex(space-between, '', '');
     position: absolute;
     margin-bottom: 16px;
-    bottom: 110px;
+    bottom: 5rem;
   }
 }
 
 .SubBtn {
   @include object('', $CircleSize, $CircleSize);
-  background-color: black;
+  background-color: $PointColor;
   border-radius: 100%;
   color: white;
+  font-size: 1.5em;
   line-height: $CircleSize;
   margin-right: 8px;
   z-index: 2;
@@ -56,10 +100,6 @@ $CircleSize: 3.5em;
   &:last-child {
     margin-right: 0;
   }
-}
-
-.ActiveBtn {
-  background-color: $PointColor;
 }
 
 .Search {

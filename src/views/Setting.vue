@@ -42,13 +42,11 @@
 
 <script>
 export default {
-
   name: 'Setting',
 };
 </script>
 
 <style lang="scss" scoped>
-
 @import '../Mixin.scss';
 
 $PointColor: orangered;
@@ -59,7 +57,6 @@ $Space: 16px;
 }
 
 .SettingSection1 {
-
   @include flex(space-between, center, '');
   padding: 1.1em 2em;
 }
@@ -79,14 +76,12 @@ $Space: 16px;
 }
 
 .SettingToggle {
-
   @include object('', 64px, 35px);
   background-color: black;
   border-radius: 25px 25px 25px 25px;
   padding: 4px;
 
   div {
-
     @include object('', 50%, 100%);
     background-color: white;
     border-radius: 100%;
@@ -94,7 +89,6 @@ $Space: 16px;
 }
 
 .SettingColor {
-
   @include flex(space-between, center, '');
 
   li {
@@ -116,7 +110,6 @@ $Space: 16px;
 }
 
 .SettingFont {
-
   @include object('', 100%, 40px);
   @include flex(space-between, center, '');
   text-align: left;
@@ -138,13 +131,11 @@ $Space: 16px;
 }
 
 .Roboto {
-
   font-family: 'Roboto Mono', monospace;
   font-size: 1.1em;
 }
 
 .Nanum {
-
   font-family: 'Nanum Pen Script', cursive;
   font-size: 1.6em;
 }
@@ -155,7 +146,6 @@ $Space: 16px;
   margin: 32px 0;
 
   button {
-
     @include object('', 45%, 40px);
     font-weight: 500;
 

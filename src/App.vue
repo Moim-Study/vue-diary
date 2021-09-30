@@ -1,5 +1,5 @@
 <template>
-  <Modal :step="step" />
+  <Modal :step="step" :showModal="showModal" @modalStatus="showModal = false" />
   <!-- <div id="nav" v-if="url[3] !== 'loading'"> -->
   <div id="nav">
     <router-link to="/">Main</router-link>
@@ -11,10 +11,10 @@
 
   <footer id="Footer">
     <div class="FooterBtns">
-      <button @click="step = 1">
+      <button @click="step_1">
         <img src="./assets/main/search_btn.svg" alt="search_btn" />
       </button>
-      <button class="FooterPlusBtn" @click="step = 2">
+      <button class="FooterPlusBtn" @click="step_2">
         <img src="./assets/main/plus_btn.svg" alt="plus_btn" />
       </button>
       <router-link to="/setting">
@@ -32,8 +32,19 @@ export default {
   data() {
     return {
       step: 0,
+      showModal: false,
       // url: document.location.href.split('/'),
     };
+  },
+  methods: {
+    step_1() {
+      this.step = 1;
+      this.showModal = true;
+    },
+    step_2() {
+      this.step = 2;
+      this.showModal = true;
+    },
   },
   components: {
     Modal,

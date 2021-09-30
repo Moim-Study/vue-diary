@@ -1,9 +1,11 @@
 <template>
   <article class="MainTodoWrap">
-    <ul class="MainTodoTop">
-      <li class="MainTodoTitle">Upcoming To-do</li>
-      <li class="MainTodoAll">See All</li>
-    </ul>
+    <div class="MainTodoTop">
+      <p class="MainTodoTitle">Upcoming To-do</p>
+      <router-link to="/todo">
+        <p class="MainTodoAll">See All</p>
+      </router-link>
+    </div>
 
     <ul class="MainTodo">
       <li>

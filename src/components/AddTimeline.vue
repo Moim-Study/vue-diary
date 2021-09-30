@@ -1,5 +1,5 @@
 <template>
-  diary
+  timeline
 </template>
 
 <script>
