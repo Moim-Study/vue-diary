@@ -6,8 +6,6 @@ import Setting from '../views/Setting.vue';
 import TimeLine from '../views/TimeLine.vue';
 import Todo from '../views/Todo.vue';
 
-/* 이걸 해당 .vue 스크립트에서 export할 때 name으로 지정해줘야 함 - 나무효크 필기 */
-
 const routes = [
   {
     path: '/',

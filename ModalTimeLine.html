@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+        body, html, div, span, label, section, aside, footer, header, nav, video, table, tr, td, th {
+            margin: 0; padding: 0; border: 0; font-size: 100%; font-family: "Roboto", sans-serif; 
+        }
+
+        a { background-color: transparent; text-decoration: none; color: black; }
+        a:active, a:hover { outline: 0; }
+        a:visited { text-decoration: none; }
+        textarea {overflow: auto;}
+        img { object-fit: cover; width: 100%; }
+        ul, ol, dl, dt, dd { margin: 0; padding: 0; list-style: none; }
+        span { display: block; }
+        h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+        button { border: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; outline: 0 none; background-color: transparent; border-radius: 0; }
+        input, select { vertical-align: middle; }
+        
+        .AddTimeLineWrap { display: flex; flex-flow: wrap column; justify-content: space-between; width: 100vw; height: auto; padding: 3vh; }
+        .AddTimeLineWrap h2 { width: 100%; font-size:1.5em; font-weight: 700; text-align: center; margin-bottom: 2vh;}
+        .AddTimeLineWrap h3 { width: 100%; font-size:1.3em; font-weight: 700; text-align: left; margin-bottom: 3vh; }
+        .AddTimeLine { width: 100%; height: auto; }
+        .AddTimeLine dl { width: 100%; height: auto; margin-bottom: 2vh;}
+        .AddTimeLine dl dt { width: 100%; font-size: 1em; font-weight: 700; text-align: left; margin-bottom: 1vh;}
+        .AddTimeLine dl dd { width: 100%; height: auto; text-align: center;}
+        .AddTimeLine dl dd input[type="text"] {
+            width: 98%; 
+            height: 4vh; 
+            text-indent: 1vh;
+            font-size: 0.8em;
+            font-weight: 600;
+            border: none; 
+            border-bottom: 2px solid black;
+        }
+        .AddTimeLine dl dd .TimeLineSetTimeWrap { width: 100%; height: 45vh; background-color: crimson;}
+
+        #TimeLineSaveBtn{ 
+            width: 100%; 
+            height: 8vh;
+            background-color: #BBBBBB;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="AddTimeLineWrap">
+        <h2>Add TimeLine</h2>
+        <h3>Create a new task</h3>
+        <div class="AddTimeLine">
+            <dl>
+                <dt>What you do?</dt>
+                <dd>
+                    <input type="text" id="TimeLineTitle">
+                </dd>
+            </dl>
+            <dl>
+                <dt>Detail for Schedule</dt>
+                <dd>
+                    <input type="text" id="TimeLineDetail">
+                </dd>
+            </dl>
+            <dl>
+                <dt>When you do?</dt>
+                <dd>
+                    <div class="TimeLineSetTimeWrap">
+
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <button type="button" id="TimeLineSaveBtn">Save TimeLine</button>
+    </div>
+</body>
+</html>
