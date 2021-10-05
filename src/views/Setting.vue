@@ -2,9 +2,7 @@
   <div class="Setting">
     <section class="SettingSection1">
       <span class="SettingTitle">Dark Mode</span>
-      <div class="SettingToggle">
-        <div></div>
-      </div>
+      <ToggleButton @change="toggleEvent" />
     </section>
 
     <section class="SettingSection1">
@@ -21,11 +19,11 @@
       <span class="SettingTitle Left">Font</span>
       <ul class="SettingFont Selected">
         <li>Roboto</li>
-        <li>Hello, there</li>
+        <li class="Roboto">Hello, there</li>
       </ul>
       <ul class="SettingFont">
         <li>Roboto Mono</li>
-        <li class="Roboto">Hello, there</li>
+        <li class="RobotoMono">Hello, there</li>
       </ul>
       <ul class="SettingFont">
         <li>Nanum Pen Script</li>
@@ -34,21 +32,33 @@
     </section>
 
     <section class="SettingBtns">
-      <button>Cancel</button>
       <button>Apply</button>
     </section>
   </div>
 </template>
 
 <script>
-export default {
+import ToggleButton from '../components/ToggleButton';
 
+export default {
   name: 'Setting',
+  data() {
+    return {
+      toggleActive: false,
+    };
+  },
+  methods: {
+    toggleEvent(value) {
+      this.toggleActive = value;
+    },
+  },
+  components: {
+    ToggleButton,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-
 @import '../Mixin.scss';
 
 $PointColor: orangered;
@@ -59,7 +69,6 @@ $Space: 16px;
 }
 
 .SettingSection1 {
-
   @include flex(space-between, center, '');
   padding: 1.1em 2em;
 }
@@ -78,23 +87,7 @@ $Space: 16px;
   margin-bottom: $Space;
 }
 
-.SettingToggle {
-
-  @include object('', 64px, 35px);
-  background-color: black;
-  border-radius: 25px 25px 25px 25px;
-  padding: 4px;
-
-  div {
-
-    @include object('', 50%, 100%);
-    background-color: white;
-    border-radius: 100%;
-  }
-}
-
 .SettingColor {
-
   @include flex(space-between, center, '');
 
   li {
@@ -116,7 +109,6 @@ $Space: 16px;
 }
 
 .SettingFont {
-
   @include object('', 100%, 40px);
   @include flex(space-between, center, '');
   text-align: left;
@@ -127,7 +119,7 @@ $Space: 16px;
   li {
     &:first-child {
       width: 45%;
-      font-size: 0.95em;
+      font-size: 1.15em;
     }
   }
 }
@@ -138,34 +130,28 @@ $Space: 16px;
 }
 
 .Roboto {
+  font-size: 1.2em;
+}
 
+.RobotoMono {
   font-family: 'Roboto Mono', monospace;
   font-size: 1.1em;
 }
 
 .Nanum {
-
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 1.6em;
+  font-size: 1.8em;
 }
 
 .SettingBtns {
-  @include flex(space-between, center, row);
   padding: 0 2em;
   margin: 32px 0;
 
   button {
-
-    @include object('', 45%, 40px);
+    @include object('', 100%, 40px);
     font-weight: 500;
-
-    &:first-child {
-      border: 1px solid black;
-    }
-    &:last-child {
-      background-color: black;
-      color: white;
-    }
+    background-color: black;
+    color: white;
   }
 }
 </style>

@@ -1,9 +1,11 @@
 <template>
   <article class="MainTodoWrap">
-    <ul class="MainTodoTop">
-      <li class="MainTodoTitle">Upcoming To-do</li>
-      <li class="MainTodoAll">See All</li>
-    </ul>
+    <div class="MainTodoTop">
+      <p class="MainTodoTitle">Upcoming To-do</p>
+      <router-link to="/todo">
+        <p class="MainTodoAll">See All</p>
+      </router-link>
+    </div>
 
     <ul class="MainTodo">
       <li>
@@ -47,11 +49,11 @@ $Space: 16px;
   margin: $Space 0;
   text-align: left;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1.6em;
 }
 
 .MainTodoAll {
-  font-size: 0.9em;
+  font-size: 1.4em;
   color: gray;
 }
 
@@ -59,14 +61,14 @@ $Space: 16px;
   li {
     display: flex;
     margin-bottom: 12px;
-    font-size: 0.9em;
+    font-size: 1.2em;
     text-align: left;
     position: relative;
   }
 }
 
 .MainTodoTime {
-  font-size: 0.9em;
+  font-size: 1em;
   color: #ccc;
   position: absolute;
   right: 0;
