@@ -168,7 +168,7 @@
 
   /* TimeLine 전체 페이지 */
   .TimeLinePage { 
-    @include object('', 100vw, auto);
+    @include object('', 100%, auto);
     margin: 0 auto;
     border-radius: 5%;
     font-size: 0.8em;
@@ -179,7 +179,7 @@
 
   /* TimeLine 상단 파트 */
   .TimeLineTopWrap {
-    @include object('', 100vw, 12vh);
+    @include object('', 100%, 12vh);
     // 헤더가 안보이는 시점부터 최상단에 고정시킴 - 210930
     position: sticky;
     top: 0px;
@@ -213,9 +213,9 @@
   }
 
   .TimeLineWeeks { 
-    @include object(flex, 600%, 5vh);
+    @include object(flex, 500%, 5vh);
     &>li{
-      @include object('', 100vw, inherit);
+      @include object('', 100%, inherit);
       float: left;
       &>ol{
         @include object(flex, 100%, inherit);
@@ -240,7 +240,7 @@
 
   /* TimeLine Main */
   .TimeLinePage .TimeLineMainWrap {
-    @include object('', 100vw, auto);
+    @include object('', 100%, auto);
     padding: 0 25px 0;
     z-index: 1;
   }
@@ -248,11 +248,11 @@
   .TimeLineMain {
     @include object(flex, 100%, 300vh);
     flex-flow: wrap row;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
 
   .TimeLineTimesWrap{
-    @include object('', 30%, inherit);
+    @include object('', 25%, inherit);
   }
 
   .TimeLineTimes{
