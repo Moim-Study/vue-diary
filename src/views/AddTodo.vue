@@ -64,7 +64,6 @@ export default {
 		}
 		function saveData() {
 			if (isColor.value !== '' && todoArea.value !== '') {
-				console.log(isTodo.value);
 				isTodo.value.push({ todo: todoArea.value, primary: isColor.value });
 			} else {
 				AddTodoNotice.value = true;
