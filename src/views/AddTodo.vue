@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="AddWrapper">
 		<div class="AddTodoPrimary">
 			<label class="PrimaryContainer">
 				<span>Primary</span>
@@ -19,54 +19,74 @@
 			placeholder="What do you have to do?"
 			cols="2"
 			rows="2"
-			v-model="isTodo"
-			:isColor="isColor"
+			v-model="todoArea"
+			:modelValue="isTodo"
 		></textarea>
+		<button class="AddModalBtn" @click="saveData">Save Todo</button>
+		<span class="AddTodoNotice" v-if="AddTodoNotice">
+			할 일을 입력해주세요.
+		</span>
 	</div>
 </template>
 
 <script>
-	import { ref } from 'vue';
-	export default {
-		name: 'AddTodo',
-		props: {
-			todoData: Array,
-		},
-		setup() {
-			return {
-				isColor: ref(null),
-				isTodo: ref(null),
-			};
-		},
-		methods: {
-			PrimaryBtnFunc(color) {
-				switch (color) {
-					case 'red':
-						this.isColor = 'red';
-						break;
-					case 'orange':
-						this.isColor = 'orange';
-						break;
-					case 'yellow':
-						this.isColor = 'yellow';
-						break;
-					case 'green':
-						this.isColor = 'green';
-						break;
-					case 'blue':
-						this.isColor = 'blue';
-						break;
-					default:
-						break;
-				}
-			},
-		},
-	};
+import { ref } from 'vue';
+export default {
+	name: 'AddTodo',
+	props: {
+		modelValue: Array,
+	},
+	setup() {
+		const todoArea = ref('');
+		const isTodo = ref([]);
+		const isColor = ref('');
+		const AddTodoNotice = ref(false);
+		function PrimaryBtnFunc(color) {
+			switch (color) {
+				case 'red':
+					isColor.value = 'red';
+					break;
+				case 'orange':
+					isColor.value = 'orange';
+					break;
+				case 'yellow':
+					isColor.value = 'yellow';
+					break;
+				case 'green':
+					isColor.value = 'green';
+					break;
+				case 'blue':
+					isColor.value = 'blue';
+					break;
+				default:
+					break;
+			}
+		}
+		function saveData() {
+			if (isColor.value !== '' && todoArea.value !== '') {
+				console.log(isTodo.value);
+				isTodo.value.push({ todo: todoArea.value, primary: isColor.value });
+			} else {
+				AddTodoNotice.value = true;
+				setTimeout(() => (AddTodoNotice.value = false), 3000);
+			}
+		}
+		return {
+			todoArea,
+			isColor,
+			isTodo,
+			PrimaryBtnFunc,
+			saveData,
+			AddTodoNotice,
+		};
+	},
+};
 </script>
 
 <style lang="scss" scoped>
-	@import '../Mixin.scss';
-
+@import '../Mixin.scss';
+.AddWrapper {
+	@include flex(unset, center, column);
 	.AddTodoPrimary {
 		margin: 10% auto;
 		width: 90%;
@@ -101,9 +121,23 @@
 			}
 		}
 	}
-
+	.AddModalBtn {
+		border: 1px solid black;
+		width: 150px;
+		height: 40px;
+		margin: 20px 0;
+		&:hover {
+			background-color: #2c3e50;
+			color: white;
+		}
+	}
+	.AddTodoNotice {
+		color: red;
+		display: block;
+		font-size: 14px;
+	}
 	.AddTodo {
-		width: 90%;
+		width: 89%;
 		height: auto;
 		padding: 3%;
 		font-weight: 500;
@@ -111,4 +145,5 @@
 			outline-color: #2c3e50;
 		}
 	}
+}
 </style>
